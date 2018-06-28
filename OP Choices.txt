@@ -1,0 +1,109 @@
+OP Choices
+
+S
+SC
+SB
+SCP
+SCB
+SBP
+SBC
+C
+CS
+CP
+CSB
+CSP
+CPS
+CPB
+B
+BS
+BP
+BSC
+BSP
+BPS
+BPC
+P
+PC
+PB
+PCS
+PCB
+PBS
+PBC
+IxxJ
+ExxP
+ExxJ
+IxxP
+NF
+NT
+SF
+ST
+Ni-Savior
+Ne-Savior
+Ti-Savior
+Te-Savior
+Fi-Savior
+Fe-Savior
+Si-Savior
+Se-Savior
+Ni-Demon
+Ne-Demon
+Ti-Demon
+Te-Demon
+Fi-Demon
+Fe-Demon
+Si-Demon
+Se-Demon
+
+
+De-Feminine
+De-Masculine
+S-Feminine
+S-Masculine
+
+Fi/Ni
+Fi/Si
+Ni/Fi
+Ni/Ti
+Si/Fi
+Si/Ti
+Ti/Ni
+Ti/Si
+Fi/Ne
+Fi/Se
+Ti/Ne
+Ti/Se
+Ne/Fi
+Ne/Ti
+Se/Fi
+Se/Ti
+Ni/Fe
+Ni/Te
+Si/Fe
+Si/Te
+Fe/Ni
+Fe/Si
+Te/Ni
+Te/Si
+Fe/Ne
+Fe/Se
+Ne/Fe
+Ne/Te
+Se/Fe
+Se/Te
+Te/Ne
+Te/Se
+
+{
+  "type": "Ti/Ni SC/B",
+  "choices": [
+    "S",
+    "SC",
+    "SCB",
+    "C",
+    "B",
+    "Ti-Savior",
+    "Ni-Savior",
+    "Fe-Demon",
+    "IxxP",
+    "NT"
+  ]
+}
