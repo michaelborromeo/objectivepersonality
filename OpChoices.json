@@ -1,138 +1,163 @@
 {
-  "choices": [
+  "choiceGroups": [
     {
-      "choice": "O",
-      "description": "Life is about things, control, and chaos"
+      "group": "Needs",
+      "choicePairs": [
+        [
+          {
+            "choice": "O",
+            "description": "Life is about things, control, and chaos",
+            "label": "Single Observer"
+          },
+          {
+            "choice": "D",
+            "description": "Life is about comparison of the self versus the tribe",
+            "label": "Single Decider"
+          }
+        ],
+        [
+          {
+            "choice": "DD",
+            "description": "Relatively calm balance with self and tribe",
+            "label": "Double Decider"
+          },
+          {
+            "choice": "OO",
+            "description": "Relatively calm balance with control and chaos",
+            "label": "Double Observer"
+          }
+        ]
+      ]
     }
   ],
   "types": [
     {
-      "type": "Fi/Ni",
-      "choices": []
+      "choices": [],
+      "type": "Fi/Ni"
     },
     {
-      "type": "Fi/Si",
-      "choices": []
+      "choices": [],
+      "type": "Fi/Si"
     },
     {
-      "type": "Ni/Fi",
-      "choices": []
+      "choices": [],
+      "type": "Ni/Fi"
     },
     {
-      "type": "Ni/Ti",
-      "choices": []
+      "choices": [],
+      "type": "Ni/Ti"
     },
     {
-      "type": "Si/Fi",
-      "choices": []
+      "choices": [],
+      "type": "Si/Fi"
     },
     {
-      "type": "Si/Ti",
-      "choices": []
+      "choices": [],
+      "type": "Si/Ti"
     },
     {
-      "type": "Ti/Ni",
-      "choices": []
+      "choices": [],
+      "type": "Ti/Ni"
     },
     {
-      "type": "Ti/Si",
-      "choices": []
+      "choices": [],
+      "type": "Ti/Si"
     },
     {
-      "type": "Fi/Ne",
-      "choices": []
+      "choices": [],
+      "type": "Fi/Ne"
     },
     {
-      "type": "Fi/Se",
-      "choices": []
+      "choices": [],
+      "type": "Fi/Se"
     },
     {
-      "type": "Ti/Ne",
-      "choices": []
+      "choices": [],
+      "type": "Ti/Ne"
     },
     {
-      "type": "Ti/Se",
-      "choices": []
+      "choices": [],
+      "type": "Ti/Se"
     },
     {
-      "type": "Ne/Fi",
-      "choices": []
+      "choices": [],
+      "type": "Ne/Fi"
     },
     {
-      "type": "Ne/Ti",
-      "choices": []
+      "choices": [],
+      "type": "Ne/Ti"
     },
     {
-      "type": "Se/Fi",
-      "choices": []
+      "choices": [],
+      "type": "Se/Fi"
     },
     {
-      "type": "Se/Ti",
-      "choices": []
+      "choices": [],
+      "type": "Se/Ti"
     },
     {
-      "type": "Ni/Fe",
-      "choices": []
+      "choices": [],
+      "type": "Ni/Fe"
     },
     {
-      "type": "Ni/Te",
-      "choices": []
+      "choices": [],
+      "type": "Ni/Te"
     },
     {
-      "type": "Si/Fe",
-      "choices": []
+      "choices": [],
+      "type": "Si/Fe"
     },
     {
-      "type": "Si/Te",
-      "choices": []
+      "choices": [],
+      "type": "Si/Te"
     },
     {
-      "type": "Fe/Ni",
-      "choices": []
+      "choices": [],
+      "type": "Fe/Ni"
     },
     {
-      "type": "Fe/Si",
-      "choices": []
+      "choices": [],
+      "type": "Fe/Si"
     },
     {
-      "type": "Te/Ni",
-      "choices": []
+      "choices": [],
+      "type": "Te/Ni"
     },
     {
-      "type": "Te/Si",
-      "choices": []
+      "choices": [],
+      "type": "Te/Si"
     },
     {
-      "type": "Fe/Ne",
-      "choices": []
+      "choices": [],
+      "type": "Fe/Ne"
     },
     {
-      "type": "Fe/Se",
-      "choices": []
+      "choices": [],
+      "type": "Fe/Se"
     },
     {
-      "type": "Ne/Fe",
-      "choices": []
+      "choices": [],
+      "type": "Ne/Fe"
     },
     {
-      "type": "Ne/Te",
-      "choices": []
+      "choices": [],
+      "type": "Ne/Te"
     },
     {
-      "type": "Se/Fe",
-      "choices": []
+      "choices": [],
+      "type": "Se/Fe"
     },
     {
-      "type": "Se/Te",
-      "choices": []
+      "choices": [],
+      "type": "Se/Te"
     },
     {
-      "type": "Te/Ne",
-      "choices": []
+      "choices": [],
+      "type": "Te/Ne"
     },
     {
-      "type": "Te/Se",
-      "choices": []
+      "choices": [],
+      "type": "Te/Se"
     }
   ]
 }
