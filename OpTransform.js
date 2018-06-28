@@ -37,10 +37,10 @@ const animalTransforms = {
 };
 
 const sexualEnergies = [
-    { energy: 'MM', choices: ['Sensory-M', 'De-M'] },
-    { energy: 'FM', choices: ['Sensory-F', 'De-M'] },
-    { energy: 'MF', choices: ['Sensory-M', 'De-F'] },
-    { energy: 'FF', choices: ['Sensory-F', 'De-F'] }
+    { energy: 'MM', choices: ['Sensing-M', 'De-M'] },
+    { energy: 'FM', choices: ['Sensing-F', 'De-M'] },
+    { energy: 'MF', choices: ['Sensing-M', 'De-F'] },
+    { energy: 'FF', choices: ['Sensing-F', 'De-F'] }
 ];
 
 const newTypes = [];
