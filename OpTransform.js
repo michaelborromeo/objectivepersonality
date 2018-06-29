@@ -82,8 +82,13 @@ for (let i = 0; i < contents.types.length; i++) {
     }
 }
 
-console.log(newTypes);
-writeToFile(newTypes);
+const output = {
+    choiceGroups: contents.choiceGroups,
+    types: newTypes
+};
+
+console.log(output);
+writeToFile(output);
 
 function formatAnimal(animal) {
     return animal[0] + animal[1] + '/' + animal[2];
