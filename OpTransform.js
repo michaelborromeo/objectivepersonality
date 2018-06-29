@@ -65,17 +65,17 @@ for (let i = 0; i < contents.types.length; i++) {
 
             const newType = {
                 type: type + ' ' + formatAnimal(animal) + ' ' + energy.energy,
-                choices: []
+                derivedChoices: []
             };
 
-            newType.choices = newType.choices.concat(leadNeeds);
-            newType.choices = newType.choices.concat(middleNeeds);
-            newType.choices = newType.choices.concat(chargedNeeds);
-            newType.choices = newType.choices.concat(animalBreakdown);
-            newType.choices = newType.choices.concat(letters);
-            newType.choices = newType.choices.concat(temperment);
-            newType.choices = newType.choices.concat(saviorsAndDemons);
-            newType.choices = newType.choices.concat(energy.choices);
+            newType.derivedChoices = newType.derivedChoices.concat(leadNeeds);
+            newType.derivedChoices = newType.derivedChoices.concat(middleNeeds);
+            newType.derivedChoices = newType.derivedChoices.concat(chargedNeeds);
+            newType.derivedChoices = newType.derivedChoices.concat(animalBreakdown);
+            newType.derivedChoices = newType.derivedChoices.concat(letters);
+            newType.derivedChoices = newType.derivedChoices.concat(temperment);
+            newType.derivedChoices = newType.derivedChoices.concat(saviorsAndDemons);
+            newType.derivedChoices = newType.derivedChoices.concat(energy.choices);
 
             newTypes.push(newType);
         }
@@ -145,11 +145,26 @@ function getLetters(type) {
     const letter1 = type[0];
     const letter2 = type[3];
 
+    let saviorLetters;
+    let demonLetters;
+
     if (letter1 === 'N' || letter1 === 'S') {
-        return letter1 + letter2;
+        saviorLetters = letter1 + letter2;
     } else {
-        return letter2 + letter1;
+        saviorLetters = letter2 + letter1;
     }
+
+    if (saviorLetters === 'NT') {
+        demonLetters = 'SF';
+    } else if (saviorLetters === 'SF') {
+        demonLetters = 'NT';
+    } else if (saviorLetters === 'ST') {
+        demonLetters = 'NF';
+    } else if (saviorLetters === 'NF') {
+        demonLetters = 'ST';
+    }
+
+    return [saviorLetters + '-Savior', demonLetters + '-Demon'];
 }
 
 function getTemperment(type) {
