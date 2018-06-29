@@ -1,6 +1,6 @@
 const sampleTypes = [{
     "type": "Fi/Ni SC/B MM",
-    "choices": [
+    "derivedChoices": [
         "D",
         "OO",
         "Di",
@@ -9,7 +9,8 @@ const sampleTypes = [{
         "B",
         "SC",
         "SC/B",
-        "NF",
+        "NF-Savior",
+        "ST-Demon",
         "IxxP",
         "Fi-Savior",
         "Ni-Savior",
@@ -19,7 +20,7 @@ const sampleTypes = [{
     ]
 }, {
     "type": "Se/Ti CS/B MF",
-    "choices": [
+    "derivedChoices": [
         "O",
         "DD",
         "Oe",
@@ -28,7 +29,8 @@ const sampleTypes = [{
         "B",
         "CS",
         "CS/B",
-        "ST",
+        "ST-Savior",
+        "NF-Demon",
         "ExxP",
         "Se-Savior",
         "Ti-Savior",
@@ -39,11 +41,10 @@ const sampleTypes = [{
 }];
 
 const sampleChoiceStates = {
-    'Di': '?',
-    'NF': '?'
+    'Blast': '2?'
 }
 
-function getMatchLevel(choiceStates, type) {
+module.exports = function getMatchLevel(choiceStates, type) {
     let level = 100;
 
     for (let choice in choiceStates) {
@@ -51,14 +52,24 @@ function getMatchLevel(choiceStates, type) {
         const multiplier = getMultiplierFromState(state);
         const derivedChoices = getDerivedChoices(choice, state);
 
-        if (!typeHasDerivedChoice(type, derived)) {
-            level = Math.max(0, level - (level * multiplier);
-                // can short circuit and return if level === 0
-            }
+        if (!typeHasDerivedChoice(type, derivedChoices)) {
+            level = Math.max(0, level - (level * multiplier));
+            // can short circuit and return if level === 0
         }
-
-        return level;
     }
+
+    return level;
+}
+
+function typeHasDerivedChoice(type, derivedChoices) {
+    for (let i = 0; i < derivedChoices.length; i++) {
+        // only one of the derived choices has to match
+        if (type.derivedChoices.indexOf(derivedChoices[i]) >= 0) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 function getMultiplierFromState(state) {
@@ -88,37 +99,37 @@ function getDerivedChoices(choice, state) {
         case 'Sensing-F':
         case 'Sensing-M':
             if (state === '?' || state === 'S' || state === 'S?') {
-                return choice;
+                return [choice];
             } else {
-                return null;
+                return [];
             }
 
         case 'S+C':
             if (state === '?' || state === 'S' || state === 'S?') {
                 return ['SC', 'CS'];
             } else {
-                return null;
+                return [];
             }
 
         case 'C+P':
             if (state === '?' || state === 'S' || state === 'S?') {
                 return ['PC', 'CP'];
             } else {
-                return null;
+                return [];
             }
 
         case 'B+S':
             if (state === '?' || state === 'S' || state === 'S?') {
                 return ['BS', 'SB'];
             } else {
-                return null;
+                return [];
             }
 
         case 'P+B':
             if (state === '?' || state === 'S' || state === 'S?') {
                 return ['PB', 'BP'];
             } else {
-                return null;
+                return [];
             }
 
         case 'Sleep':
@@ -133,7 +144,7 @@ function getDerivedChoices(choice, state) {
             } else if (state === '4' || state === '4?') {
                 return ['CP/B', 'BP/C', 'PC/B ', 'PB/C'];
             } else {
-                return null;
+                return [];
             }
 
         case 'Play':
@@ -148,24 +159,38 @@ function getDerivedChoices(choice, state) {
             } else if (state === '4' || state === '4?') {
                 return ['SC/B', 'SB/C', 'CS/B', 'BS/C'];
             } else {
-                return null;
+                return [];
             }
 
         case 'Consume':
             if (state === '?' || state === 'S' || state === 'S?') {
-                return ['PC', 'PB', 'BP', 'CP'];
+                return ['CS', 'CP', 'SC', 'PC'];
             } else if (state === 'S1' || state === 'S1?') {
-                return ['PC', 'PB'];
+                return ['CS', 'CP'];
             } else if (state === 'S2' || state === 'S2?') {
-                return ['BP', 'CP'];
+                return ['SC', 'PC'];
             } else if (state === '3' || state === '3?') {
-                return ['SC/P', 'SB/P', 'CS/P', 'BS/P'];
+                return ['SB/C', 'BS/C', 'BP/C', 'PB/C'];
             } else if (state === '4' || state === '4?') {
-                return ['SC/B', 'SB/C', 'CS/B', 'BS/C'];
+                return ['SB/P', 'BS/P', 'BP/S', 'PB/S'];
             } else {
-                return null;
+                return [];
             }
+
         case 'Blast':
+            if (state === '?' || state === 'S' || state === 'S?') {
+                return ['BS', 'BP', 'SB', 'PB'];
+            } else if (state === 'S1' || state === 'S1?') {
+                return ['BS', 'BP'];
+            } else if (state === 'S2' || state === 'S2?') {
+                return ['SB', 'PB'];
+            } else if (state === '3' || state === '3?') {
+                return ['SC/B', 'CS/B', 'CP/B', 'PC/B'];
+            } else if (state === '4' || state === '4?') {
+                return ['SC/P', 'CS/P', 'CP/S', 'PC/S'];
+            } else {
+                return [];
+            }
 
         case 'SF':
         case 'NT':
@@ -180,14 +205,14 @@ function getDerivedChoices(choice, state) {
         case 'Se':
         case 'Ni':
             if (state === '?' || state === 'S' || state === 'S?') {
-                return choice + '-Savior';
+                return [choice + '-Savior'];
             } else if (state === 'D' || state === 'D?') {
-                return choice + '-Demon';
+                return [choice + '-Demon'];
             } else {
-                return null;
+                return [];
             }
 
         default:
-            return null;
+            return [];
     }
 }
