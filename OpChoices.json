@@ -6,24 +6,28 @@
           {
             "choice": "O",
             "description": "Life is about things, control, and chaos",
-            "label": "Single Observer"
+            "label": "Single Observer",
+            "states": ["S"]
           },
           {
             "choice": "D",
             "description": "Life is about comparison of the self versus the tribe",
-            "label": "Single Decider"
+            "label": "Single Decider",
+            "states": ["S"]
           }
         ],
         [
           {
             "choice": "DD",
             "description": "Relatively calm balance with self and tribe",
-            "label": "Double Decider"
+            "label": "Double Decider",
+            "states": ["S"]
           },
           {
             "choice": "OO",
             "description": "Relatively calm balance with control and chaos",
-            "label": "Double Observer"
+            "label": "Double Observer",
+            "states": ["S"]
           }
         ],
         [],
@@ -31,24 +35,28 @@
           {
             "choice": "Di",
             "description": "Prioritizes self decisions before tribe's",
-            "label": "Introverted Decider"
+            "label": "Introverted Decider",
+            "states": ["S"]
           },
           {
             "choice": "De",
             "description": "Prioritizes tribe's decisions above self",
-            "label": "Extroverted Decider"
+            "label": "Extroverted Decider",
+            "states": ["S"]
           }
         ],
         [
           {
             "choice": "Oi",
             "description": "Controlling, is not open to new info",
-            "label": "Introverted Observer"
+            "label": "Introverted Observer",
+            "states": ["S"]
           },
           {
             "choice": "Oe",
             "description": "Chaotic, takes more info than they organize",
-            "label": "Extroverted Observer"
+            "label": "Extroverted Observer",
+            "states": ["S"]
           }
         ],
         [],
@@ -56,24 +64,28 @@
           {
             "choice": "IxxJ",
             "description": "Over organizes known info, slow to gather new info",
-            "label": "IxxJ"
+            "label": "IxxJ",
+            "states": ["S"]
           },
           {
             "choice": "ExxP",
             "description": "Over gathers new info, slow to organize known info",
-            "label": "ExxP"
+            "label": "ExxP",
+            "states": ["S"]
           }
         ],
         [
           {
             "choice": "IxxP",
             "description": "Builds up self so the tribe can be inspired",
-            "label": "IxxP"
+            "label": "IxxP",
+            "states": ["S"]
           },
           {
             "choice": "ExxJ",
             "description": "Builds up the tribe so the self can be inspired",
-            "label": "ExxJ"
+            "label": "ExxJ",
+            "states": ["S"]
           }
         ]
       ],
@@ -85,24 +97,28 @@
           {
             "choice": "S+C",
             "description": "Deep inner world of taking in info and processing",
-            "label": "Sleep and Consume"
+            "label": "Sleep and Consume",
+            "states": ["S"]
           },
           {
             "choice": "C+P",
             "description": "Over gathers then wants to do something with it",
-            "label": "Consume and Play"
+            "label": "Consume and Play",
+            "states": ["S"]
           }
         ],
         [
           {
             "choice": "B+S",
             "description": "Reworks the same info and then shares knowledge",
-            "label": "Blast and Sleep"
+            "label": "Blast and Sleep",
+            "states": ["S"]
           },
           {
             "choice": "P+B",
             "description": "Expends energy and shares knowledge",
-            "label": "Play and Blast"
+            "label": "Play and Blast",
+            "states": ["S"]
           }
         ],
         [],
@@ -111,13 +127,15 @@
             "choice": "Sleep",
             "description": "Preserving energy, processing, introspective",
             "label": "Sleep",
-            "parenthetical": "Di+Oi"
+            "parenthetical": "Di+Oi",
+            "states": ["S", "S1", "S2", "3", "4"]
           },
           {
             "choice": "Play",
             "description": "Expending energy, work, doing, show off",
             "label": "Play",
-            "parenthetical": "De+Oe"
+            "parenthetical": "De+Oe",
+            "states": ["S", "S1", "S2", "3", "4"]
           }
         ],
         [
@@ -125,13 +143,15 @@
             "choice": "Consume",
             "description": "Learning, taking in & respecting info for self",
             "label": "Consume",
-            "parenthetical": "Di+Oe"
+            "parenthetical": "Di+Oe",
+            "states": ["S", "S1", "S2", "3", "4"]
           },
           {
             "choice": "Blast",
             "description": "Teaching, controlling, get started, bragging",
             "label": "Blast",
-            "parenthetical": "De+Oi"
+            "parenthetical": "De+Oi",
+            "states": ["S", "S1", "S2", "3", "4"]
           }
         ]
       ],
@@ -144,13 +164,15 @@
             "choice": "SF",
             "description": "Valuing something in the physical world",
             "label": "SF",
-            "parenthetical": "Popularity"
+            "parenthetical": "Popularity",
+            "states": ["S", "D"]
           },
           {
             "choice": "NT",
             "description": "Reasons in the abstract world",
             "label": "NT",
-            "parenthetical": "Nerdy"
+            "parenthetical": "Nerdy",
+            "states": ["S", "D"]
           }
         ],
         [
@@ -158,13 +180,15 @@
             "choice": "ST",
             "description": "Reasons in the physical world",
             "label": "ST",
-            "parenthetical": "Reporter"
+            "parenthetical": "Reporter",
+            "states": ["S", "D"]
           },
           {
             "choice": "NF",
             "description": "Valuing something in the abstract world",
             "label": "NF",
-            "parenthetical": "Hippie"
+            "parenthetical": "Hippie",
+            "states": ["S", "D"]
           }
         ]
       ],
@@ -176,48 +200,56 @@
           {
             "choice": "Fi",
             "description": "Decides and builds identity on personal values",
-            "label": "Introverted Feeling"
+            "label": "Introverted Feeling",
+            "states": ["S", "D"]
           },
           {
             "choice": "Te",
             "description": "Decides based on tribe's spectrum of social reasons",
-            "label": "Extroverted Thinking"
+            "label": "Extroverted Thinking",
+            "states": ["S", "D"]
           }
         ],
         [
           {
             "choice": "Fe",
             "description": "Decides based on tribe's spectrum of social values",
-            "label": "Extroverted Feeling"
+            "label": "Extroverted Feeling",
+            "states": ["S", "D"]
           },
           {
             "choice": "Ti",
             "description": "Decides and builds identity on personal reasons",
-            "label": "Introverted Thinking"
+            "label": "Introverted Thinking",
+            "states": ["S", "D"]
           }
         ],
         [
           {
             "choice": "Si",
             "description": "Organizes known details, realities, and facts",
-            "label": "Introverted Sensing"
+            "label": "Introverted Sensing",
+            "states": ["S", "D"]
           },
           {
             "choice": "Ne",
             "description": "Gathers abstract connections across the spectrum",
-            "label": "Extroverted Intuition"
+            "label": "Extroverted Intuition",
+            "states": ["S", "D"]
           }
         ],
         [
           {
             "choice": "Se",
             "description": "Gathers details, realities, and facts across the spectrum",
-            "label": "Extroverted Sensing"
+            "label": "Extroverted Sensing",
+            "states": ["S", "D"]
           },
           {
             "choice": "Ni",
             "description": "Organizes known abstract connections",
-            "label": "Introverted Intuition"
+            "label": "Introverted Intuition",
+            "states": ["S", "D"]
           }
         ]
       ],
@@ -229,24 +261,28 @@
           {
             "choice": "De-F",
             "description": "Soft with the tribe, careful with words",
-            "label": "Feminine Extroverted Decider"
+            "label": "Feminine Extroverted Decider",
+            "states": ["S", "D"]
           },
           {
             "choice": "De-M",
             "description": "Shoves on the tribe, says it how it is",
-            "label": "Masculine Extroverted Decider"
+            "label": "Masculine Extroverted Decider",
+            "states": ["S", "D"]
           }
         ],
         [
           {
             "choice": "Sensing-F",
             "description": "Sight, written, picture, open, tastes, tries",
-            "label": "Feminine Sensing"
+            "label": "Feminine Sensing",
+            "states": ["S", "D"]
           },
           {
             "choice": "Sensing-M",
             "description": "Words, sounds, rhythm, weight, movement, texture",
-            "label": "Masculine Sensing"
+            "label": "Masculine Sensing",
+            "states": ["S", "D"]
           }
         ]
       ],
