@@ -13,7 +13,6 @@ const sampleChoiceStates = {
 
 console.log(JSON.stringify(getCrossReferences(sampleChoiceStates), ' ', ' '));
 
-
 function getCrossReferences(choiceStates) {
     const crossReferenceGroups = {};
 
@@ -25,7 +24,7 @@ function getCrossReferences(choiceStates) {
         crossReferenceGroups[choice] = {
             choice,
             state,
-            crossReferences
+            crossReferences: crossReferences || {} 
         };
     }
 
