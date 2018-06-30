@@ -7,27 +7,72 @@
             "choice": "O",
             "description": "Life is about things, control, and chaos",
             "label": "Single Observer",
-            "states": ["S"]
+            "states": [
+              "S"
+            ],
+            "crossReferences": {
+              "S": {
+                "DD": "S",
+                "Oi": "S",
+                "Oe": "S",
+                "IxxJ": "S",
+                "ExxP": "S"
+              }
+            }
           },
           {
             "choice": "D",
             "description": "Life is about comparison of the self versus the tribe",
             "label": "Single Decider",
-            "states": ["S"]
+            "states": [
+              "S"
+            ],
+            "crossReferences": {
+              "S": {
+                "OO": "S",
+                "Di": "S",
+                "De": "S",
+                "ExxJ": "S",
+                "IxxP": "S"
+              }
+            }
           }
         ],
+        [],
         [
           {
             "choice": "DD",
             "description": "Relatively calm balance with self and tribe",
             "label": "Double Decider",
-            "states": ["S"]
+            "states": [
+              "S"
+            ],
+            "crossReferences": {
+              "S": {
+                "O": "S",
+                "Oi": "S",
+                "Oe": "S",
+                "IxxJ": "S",
+                "ExxP": "S"
+              }
+            }
           },
           {
             "choice": "OO",
             "description": "Relatively calm balance with control and chaos",
             "label": "Double Observer",
-            "states": ["S"]
+            "states": [
+              "S"
+            ],
+            "crossReferences": {
+              "S": {
+                "D": "S",
+                "Di": "S",
+                "De": "S",
+                "ExxJ": "S",
+                "IxxP": "S"
+              }
+            }
           }
         ],
         [],
@@ -36,13 +81,53 @@
             "choice": "Di",
             "description": "Prioritizes self decisions before tribe's",
             "label": "Introverted Decider",
-            "states": ["S"]
+            "states": [
+              "S"
+            ],
+            "crossReferences": {
+              "S": {
+                "ExxJ": "S",
+                "IxxP": "S",
+                "IxxJ": "S",
+                "Sleep": "S1",
+                "Sleep": "S2",
+                "Consume": "S1",
+                "Consume": "S2",
+                "S+C": "S",
+                "C+P": "S",
+                "B+S": "S",
+                "Fi": "S",
+                "Ti": "S",
+                "Fe": "D",
+                "Te": "D"
+              }
+            }
           },
           {
             "choice": "De",
             "description": "Prioritizes tribe's decisions above self",
             "label": "Extroverted Decider",
-            "states": ["S"]
+            "states": [
+              "S"
+            ],
+            "crossReferences": {
+              "S": {
+                "ExxJ": "S",
+                "ExxP": "S",
+                "IxxJ": "S",
+                "Play": "S1",
+                "Play": "S2",
+                "Blast": "S1",
+                "Blast": "S2",
+                "C+P": "S",
+                "B+S": "S",
+                "P+B": "S",
+                "Fi": "D",
+                "Ti": "D",
+                "Fe": "S",
+                "Te": "S"
+              }
+            }
           }
         ],
         [
@@ -50,13 +135,53 @@
             "choice": "Oi",
             "description": "Controlling, is not open to new info",
             "label": "Introverted Observer",
-            "states": ["S"]
+            "states": [
+              "S"
+            ],
+            "crossReferences": {
+              "S": {
+                "ExxJ": "S",
+                "IxxP": "S",
+                "IxxJ": "S",
+                "Sleep": "S1",
+                "Sleep": "S2",
+                "Blast": "S1",
+                "Blast": "S2",
+                "S+C": "S",
+                "B+S": "S",
+                "P+B": "S",
+                "Ni": "S",
+                "Si": "S",
+                "Ne": "D",
+                "Se": "D"
+              }
+            }
           },
           {
             "choice": "Oe",
             "description": "Chaotic, takes more info than they organize",
             "label": "Extroverted Observer",
-            "states": ["S"]
+            "states": [
+              "S"
+            ],
+            "crossReferences": {
+              "S": {
+                "ExxJ": "S",
+                "IxxP": "S",
+                "ExxP": "S",
+                "Play": "S1",
+                "Play": "S2",
+                "Consume": "S1",
+                "Consume": "S2",
+                "S+C": "S",
+                "C+P": "S",
+                "P+B": "S",
+                "Ne": "S",
+                "Se": "S",
+                "Ni": "D",
+                "Si": "D"
+              }
+            }
           }
         ],
         [],
@@ -65,13 +190,35 @@
             "choice": "IxxJ",
             "description": "Over organizes known info, slow to gather new info",
             "label": "IxxJ",
-            "states": ["S"]
+            "states": [
+              "S"
+            ],
+            "crossReferences": {
+              "S": {
+                "ExxJ": "S",
+                "IxxP": "S",
+                "ExxP": "S",
+                "Play": "S1",
+                "Play": "S2",
+                "Consume": "S1",
+                "Consume": "S2",
+                "S+C": "S",
+                "C+P": "S",
+                "P+B": "S",
+                "Ne": "S",
+                "Se": "S",
+                "Ni": "D",
+                "Si": "D"
+              }
+            }
           },
           {
             "choice": "ExxP",
             "description": "Over gathers new info, slow to organize known info",
             "label": "ExxP",
-            "states": ["S"]
+            "states": [
+              "S"
+            ]
           }
         ],
         [
@@ -79,13 +226,17 @@
             "choice": "IxxP",
             "description": "Builds up self so the tribe can be inspired",
             "label": "IxxP",
-            "states": ["S"]
+            "states": [
+              "S"
+            ]
           },
           {
             "choice": "ExxJ",
             "description": "Builds up the tribe so the self can be inspired",
             "label": "ExxJ",
-            "states": ["S"]
+            "states": [
+              "S"
+            ]
           }
         ]
       ],
@@ -98,13 +249,17 @@
             "choice": "S+C",
             "description": "Deep inner world of taking in info and processing",
             "label": "Sleep and Consume",
-            "states": ["S"]
+            "states": [
+              "S"
+            ]
           },
           {
             "choice": "C+P",
             "description": "Over gathers then wants to do something with it",
             "label": "Consume and Play",
-            "states": ["S"]
+            "states": [
+              "S"
+            ]
           }
         ],
         [
@@ -112,13 +267,17 @@
             "choice": "B+S",
             "description": "Reworks the same info and then shares knowledge",
             "label": "Blast and Sleep",
-            "states": ["S"]
+            "states": [
+              "S"
+            ]
           },
           {
             "choice": "P+B",
             "description": "Expends energy and shares knowledge",
             "label": "Play and Blast",
-            "states": ["S"]
+            "states": [
+              "S"
+            ]
           }
         ],
         [],
@@ -128,14 +287,26 @@
             "description": "Preserving energy, processing, introspective",
             "label": "Sleep",
             "parenthetical": "Di+Oi",
-            "states": ["S", "S1", "S2", "3", "4"]
+            "states": [
+              "S",
+              "S1",
+              "S2",
+              "3",
+              "4"
+            ]
           },
           {
             "choice": "Play",
             "description": "Expending energy, work, doing, show off",
             "label": "Play",
             "parenthetical": "De+Oe",
-            "states": ["S", "S1", "S2", "3", "4"]
+            "states": [
+              "S",
+              "S1",
+              "S2",
+              "3",
+              "4"
+            ]
           }
         ],
         [
@@ -144,14 +315,26 @@
             "description": "Learning, taking in & respecting info for self",
             "label": "Consume",
             "parenthetical": "Di+Oe",
-            "states": ["S", "S1", "S2", "3", "4"]
+            "states": [
+              "S",
+              "S1",
+              "S2",
+              "3",
+              "4"
+            ]
           },
           {
             "choice": "Blast",
             "description": "Teaching, controlling, get started, bragging",
             "label": "Blast",
             "parenthetical": "De+Oi",
-            "states": ["S", "S1", "S2", "3", "4"]
+            "states": [
+              "S",
+              "S1",
+              "S2",
+              "3",
+              "4"
+            ]
           }
         ]
       ],
@@ -165,14 +348,20 @@
             "description": "Valuing something in the physical world",
             "label": "SF",
             "parenthetical": "Popularity",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           },
           {
             "choice": "NT",
             "description": "Reasons in the abstract world",
             "label": "NT",
             "parenthetical": "Nerdy",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           }
         ],
         [
@@ -181,14 +370,20 @@
             "description": "Reasons in the physical world",
             "label": "ST",
             "parenthetical": "Reporter",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           },
           {
             "choice": "NF",
             "description": "Valuing something in the abstract world",
             "label": "NF",
             "parenthetical": "Hippie",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           }
         ]
       ],
@@ -201,13 +396,19 @@
             "choice": "Fi",
             "description": "Decides and builds identity on personal values",
             "label": "Introverted Feeling",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           },
           {
             "choice": "Te",
             "description": "Decides based on tribe's spectrum of social reasons",
             "label": "Extroverted Thinking",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           }
         ],
         [
@@ -215,13 +416,19 @@
             "choice": "Fe",
             "description": "Decides based on tribe's spectrum of social values",
             "label": "Extroverted Feeling",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           },
           {
             "choice": "Ti",
             "description": "Decides and builds identity on personal reasons",
             "label": "Introverted Thinking",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           }
         ],
         [
@@ -229,13 +436,19 @@
             "choice": "Si",
             "description": "Organizes known details, realities, and facts",
             "label": "Introverted Sensing",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           },
           {
             "choice": "Ne",
             "description": "Gathers abstract connections across the spectrum",
             "label": "Extroverted Intuition",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           }
         ],
         [
@@ -243,13 +456,19 @@
             "choice": "Se",
             "description": "Gathers details, realities, and facts across the spectrum",
             "label": "Extroverted Sensing",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           },
           {
             "choice": "Ni",
             "description": "Organizes known abstract connections",
             "label": "Introverted Intuition",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           }
         ]
       ],
@@ -262,13 +481,19 @@
             "choice": "De-F",
             "description": "Soft with the tribe, careful with words",
             "label": "Feminine Extroverted Decider",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           },
           {
             "choice": "De-M",
             "description": "Shoves on the tribe, says it how it is",
             "label": "Masculine Extroverted Decider",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           }
         ],
         [
@@ -276,13 +501,19 @@
             "choice": "Sensing-F",
             "description": "Sight, written, picture, open, tastes, tries",
             "label": "Feminine Sensing",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           },
           {
             "choice": "Sensing-M",
             "description": "Words, sounds, rhythm, weight, movement, texture",
             "label": "Masculine Sensing",
-            "states": ["S", "D"]
+            "states": [
+              "S",
+              "D"
+            ]
           }
         ]
       ],

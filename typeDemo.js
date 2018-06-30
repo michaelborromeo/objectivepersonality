@@ -8,7 +8,8 @@ const sampleChoiceStates = {
     'Sleep': 'S',
     'Se': 'S',
     'DD': 'S',
-    'IxxP': 'S'
+    'ExxP': 'S',
+    'Sensing-M': 'S'
 }
 
 for (let i = 0; i < opData.types.length; i++) {
