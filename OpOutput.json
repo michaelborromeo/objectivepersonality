@@ -9,7 +9,16 @@
       "label": "Single Observer",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "DD": "S",
+        "Oi": "S",
+        "Oe": "S",
+        "IxxJ": "S",
+        "ExxP": "S"
+       }
+      }
      },
      {
       "choice": "D",
@@ -17,9 +26,19 @@
       "label": "Single Decider",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "OO": "S",
+        "Di": "S",
+        "De": "S",
+        "ExxJ": "S",
+        "IxxP": "S"
+       }
+      }
      }
     ],
+    [],
     [
      {
       "choice": "DD",
@@ -27,7 +46,16 @@
       "label": "Double Decider",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "O": "S",
+        "Oi": "S",
+        "Oe": "S",
+        "IxxJ": "S",
+        "ExxP": "S"
+       }
+      }
      },
      {
       "choice": "OO",
@@ -35,7 +63,16 @@
       "label": "Double Observer",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "D": "S",
+        "Di": "S",
+        "De": "S",
+        "ExxJ": "S",
+        "IxxP": "S"
+       }
+      }
      }
     ],
     [],
@@ -46,7 +83,29 @@
       "label": "Introverted Decider",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "ExxJ": "S",
+        "IxxP": "S",
+        "IxxJ": "S",
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "C+P": "S",
+        "B+S": "S",
+        "Fi": "S",
+        "Ti": "S",
+        "Fe": "D",
+        "Te": "D"
+       }
+      }
      },
      {
       "choice": "De",
@@ -54,7 +113,29 @@
       "label": "Extroverted Decider",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "ExxJ": "S",
+        "ExxP": "S",
+        "IxxJ": "S",
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "C+P": "S",
+        "B+S": "S",
+        "P+B": "S",
+        "Fi": "D",
+        "Ti": "D",
+        "Fe": "S",
+        "Te": "S"
+       }
+      }
      }
     ],
     [
@@ -64,7 +145,29 @@
       "label": "Introverted Observer",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "ExxJ": "S",
+        "IxxP": "S",
+        "IxxJ": "S",
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "B+S": "S",
+        "P+B": "S",
+        "Ni": "S",
+        "Si": "S",
+        "Ne": "D",
+        "Se": "D"
+       }
+      }
      },
      {
       "choice": "Oe",
@@ -72,7 +175,29 @@
       "label": "Extroverted Observer",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "ExxJ": "S",
+        "IxxP": "S",
+        "ExxP": "S",
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "C+P": "S",
+        "P+B": "S",
+        "Ne": "S",
+        "Se": "S",
+        "Ni": "D",
+        "Si": "D"
+       }
+      }
      }
     ],
     [],
@@ -83,7 +208,29 @@
       "label": "IxxJ",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "O": "S",
+        "DD": "S",
+        "Oi": "S",
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "B+S": "S",
+        "P+B": "S",
+        "Ni": "S",
+        "Si": "S",
+        "Ne": "D",
+        "Se": "D"
+       }
+      }
      },
      {
       "choice": "ExxP",
@@ -91,7 +238,29 @@
       "label": "ExxP",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "O": "S",
+        "DD": "S",
+        "Oe": "S",
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "C+P": "S",
+        "P+B": "S",
+        "Ne": "S",
+        "Se": "S",
+        "Ni": "D",
+        "Si": "D"
+       }
+      }
      }
     ],
     [
@@ -101,7 +270,29 @@
       "label": "IxxP",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "D": "S",
+        "OO": "S",
+        "Di": "S",
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "C+P": "S",
+        "B+S": "S",
+        "Ti": "S",
+        "Fi": "S",
+        "Te": "D",
+        "Fe": "D"
+       }
+      }
      },
      {
       "choice": "ExxJ",
@@ -109,7 +300,29 @@
       "label": "ExxJ",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "D": "S",
+        "OO": "S",
+        "De": "S",
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "C+P": "S",
+        "B+S": "S",
+        "P+B": "S",
+        "Te": "S",
+        "Fe": "S",
+        "Ti": "D",
+        "Fi": "D"
+       }
+      }
      }
     ]
    ],
@@ -124,7 +337,19 @@
       "label": "Sleep and Consume",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ]
+       }
+      }
      },
      {
       "choice": "C+P",
@@ -132,7 +357,19 @@
       "label": "Consume and Play",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "Play": [
+         "S1",
+         "S2"
+        ]
+       }
+      }
      }
     ],
     [
@@ -142,7 +379,19 @@
       "label": "Blast and Sleep",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "Sleep": [
+         "S1",
+         "S2"
+        ]
+       }
+      }
      },
      {
       "choice": "P+B",
@@ -150,7 +399,19 @@
       "label": "Play and Blast",
       "states": [
        "S"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ]
+       }
+      }
      }
     ],
     [],
@@ -166,7 +427,29 @@
        "S2",
        "3",
        "4"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "S+C": "S",
+        "B+S": "S"
+       },
+       "S1": {
+        "S+C": "S",
+        "B+S": "S",
+        "Di": "S",
+        "Oi": "S",
+        "Fi": "S",
+        "Ti": "S",
+        "Si": "S",
+        "Ni": "S"
+       },
+       "S2": {
+        "S+C": "S",
+        "B+S": "S"
+       },
+       "S3": {},
+       "S4": {}
+      }
      },
      {
       "choice": "Play",
@@ -179,7 +462,29 @@
        "S2",
        "3",
        "4"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "C+P": "S",
+        "P+B": "S"
+       },
+       "S1": {
+        "C+P": "S",
+        "P+B": "S",
+        "De": "S",
+        "Oe": "S",
+        "Fe": "S",
+        "Te": "S",
+        "Se": "S",
+        "Ne": "S"
+       },
+       "S2": {
+        "C+P": "S",
+        "P+B": "S"
+       },
+       "S3": {},
+       "S4": {}
+      }
      }
     ],
     [
@@ -194,7 +499,29 @@
        "S2",
        "3",
        "4"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "S+C": "S",
+        "C+P": "S"
+       },
+       "S1": {
+        "S+C": "S",
+        "C+P": "S",
+        "Di": "S",
+        "Oe": "S",
+        "Fi": "S",
+        "Ti": "S",
+        "Se": "S",
+        "Ne": "S"
+       },
+       "S2": {
+        "S+C": "S",
+        "C+P": "S"
+       },
+       "S3": {},
+       "S4": {}
+      }
      },
      {
       "choice": "Blast",
@@ -207,7 +534,29 @@
        "S2",
        "3",
        "4"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "B+S": "S",
+        "P+B": "S"
+       },
+       "S1": {
+        "B+S": "S",
+        "P+B": "S",
+        "De": "S",
+        "Oi": "S",
+        "Fe": "S",
+        "Te": "S",
+        "Si": "S",
+        "Ni": "S"
+       },
+       "S2": {
+        "B+S": "S",
+        "P+B": "S"
+       },
+       "S3": {},
+       "S4": {}
+      }
      }
     ]
    ],
@@ -224,7 +573,23 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Fe": "S",
+        "Fi": "S",
+        "Se": "S",
+        "Si": "S",
+        "NT": "D"
+       },
+       "D": {
+        "Te": "S",
+        "Ti": "S",
+        "Ne": "S",
+        "Ni": "S",
+        "NT": "S"
+       }
+      }
      },
      {
       "choice": "NT",
@@ -234,7 +599,23 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Te": "S",
+        "Ti": "S",
+        "Ne": "S",
+        "Ni": "S",
+        "SF": "D"
+       },
+       "D": {
+        "Fe": "S",
+        "Fi": "S",
+        "Se": "S",
+        "Si": "S",
+        "SF": "S"
+       }
+      }
      }
     ],
     [
@@ -246,7 +627,23 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Te": "S",
+        "Ti": "S",
+        "Se": "S",
+        "Si": "S",
+        "NF": "D"
+       },
+       "D": {
+        "Fe": "S",
+        "Fi": "S",
+        "Ne": "S",
+        "Ni": "S",
+        "NF": "S"
+       }
+      }
      },
      {
       "choice": "NF",
@@ -256,7 +653,23 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Fe": "S",
+        "Fi": "S",
+        "Ne": "S",
+        "Ni": "S",
+        "ST": "D"
+       },
+       "D": {
+        "Te": "S",
+        "Ti": "S",
+        "Se": "S",
+        "Si": "S",
+        "ST": "S"
+       }
+      }
      }
     ]
    ],
@@ -272,7 +685,26 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Di": "S",
+        "Sleep": [
+         "S",
+         "S1"
+        ],
+        "Consume": [
+         "S",
+         "S1"
+        ],
+        "SF": "S",
+        "NF": "S"
+       },
+       "D": {
+        "SF": "D",
+        "NF": "D"
+       }
+      }
      },
      {
       "choice": "Te",
@@ -281,7 +713,26 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "De": "S",
+        "Blast": [
+         "S",
+         "S1"
+        ],
+        "Play": [
+         "S",
+         "S1"
+        ],
+        "ST": "S",
+        "NT": "S"
+       },
+       "D": {
+        "ST": "D",
+        "NT": "D"
+       }
+      }
      }
     ],
     [
@@ -292,7 +743,26 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "De": "S",
+        "Blast": [
+         "S",
+         "S1"
+        ],
+        "Play": [
+         "S",
+         "S1"
+        ],
+        "SF": "S",
+        "NF": "S"
+       },
+       "D": {
+        "SF": "D",
+        "NF": "D"
+       }
+      }
      },
      {
       "choice": "Ti",
@@ -301,7 +771,26 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Di": "S",
+        "Sleep": [
+         "S",
+         "S1"
+        ],
+        "Consume": [
+         "S",
+         "S1"
+        ],
+        "ST": "S",
+        "NT": "S"
+       },
+       "D": {
+        "ST": "D",
+        "NT": "D"
+       }
+      }
      }
     ],
     [
@@ -312,7 +801,26 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Oi": "S",
+        "Sleep": [
+         "S",
+         "S1"
+        ],
+        "Blast": [
+         "S",
+         "S1"
+        ],
+        "ST": "S",
+        "SF": "S"
+       },
+       "D": {
+        "ST": "D",
+        "SF": "D"
+       }
+      }
      },
      {
       "choice": "Ne",
@@ -321,7 +829,26 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Oe": "S",
+        "Consume": [
+         "S",
+         "S1"
+        ],
+        "Play": [
+         "S",
+         "S1"
+        ],
+        "NT": "S",
+        "NF": "S"
+       },
+       "D": {
+        "NT": "D",
+        "NF": "D"
+       }
+      }
      }
     ],
     [
@@ -332,7 +859,26 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Oe": "S",
+        "Consume": [
+         "S",
+         "S1"
+        ],
+        "Play": [
+         "S",
+         "S1"
+        ],
+        "ST": "S",
+        "SF": "S"
+       },
+       "D": {
+        "ST": "D",
+        "SF": "D"
+       }
+      }
      },
      {
       "choice": "Ni",
@@ -341,7 +887,26 @@
       "states": [
        "S",
        "D"
-      ]
+      ],
+      "crossReferences": {
+       "S": {
+        "Oi": "S",
+        "Blast": [
+         "S",
+         "S1"
+        ],
+        "Sleep": [
+         "S",
+         "S1"
+        ],
+        "NT": "S",
+        "NF": "S"
+       },
+       "D": {
+        "NT": "D",
+        "NF": "D"
+       }
+      }
      }
     ]
    ],

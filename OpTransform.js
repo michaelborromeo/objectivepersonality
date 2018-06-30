@@ -65,7 +65,7 @@ for (let i = 0; i < contents.types.length; i++) {
 
             const newType = {
                 type: type + ' ' + formatAnimal(animal) + ' ' + energy.energy,
-                derivedChoices: []
+                derivedChoices: [],
             };
 
             newType.derivedChoices = newType.derivedChoices.concat(leadNeeds);

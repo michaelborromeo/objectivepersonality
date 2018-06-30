@@ -89,10 +89,8 @@
                 "ExxJ": "S",
                 "IxxP": "S",
                 "IxxJ": "S",
-                "Sleep": "S1",
-                "Sleep": "S2",
-                "Consume": "S1",
-                "Consume": "S2",
+                "Sleep": ["S1", "S2"],
+                "Consume": ["S1", "S2"],
                 "S+C": "S",
                 "C+P": "S",
                 "B+S": "S",
@@ -115,10 +113,8 @@
                 "ExxJ": "S",
                 "ExxP": "S",
                 "IxxJ": "S",
-                "Play": "S1",
-                "Play": "S2",
-                "Blast": "S1",
-                "Blast": "S2",
+                "Play": ["S1", "S2"],
+                "Blast": ["S1", "S2"],
                 "C+P": "S",
                 "B+S": "S",
                 "P+B": "S",
@@ -143,10 +139,8 @@
                 "ExxJ": "S",
                 "IxxP": "S",
                 "IxxJ": "S",
-                "Sleep": "S1",
-                "Sleep": "S2",
-                "Blast": "S1",
-                "Blast": "S2",
+                "Sleep": ["S1", "S2"],
+                "Blast": ["S1", "S2"],
                 "S+C": "S",
                 "B+S": "S",
                 "P+B": "S",
@@ -169,10 +163,8 @@
                 "ExxJ": "S",
                 "IxxP": "S",
                 "ExxP": "S",
-                "Play": "S1",
-                "Play": "S2",
-                "Consume": "S1",
-                "Consume": "S2",
+                "Play": ["S1", "S2"],
+                "Consume": ["S1", "S2"],
                 "S+C": "S",
                 "C+P": "S",
                 "P+B": "S",
@@ -198,10 +190,8 @@
                 "O": "S",
                 "DD": "S",
                 "Oi": "S",
-                "Sleep": "S1",
-                "Sleep": "S2",
-                "Blast": "S1",
-                "Blast": "S2",
+                "Sleep": ["S1", "S2"],
+                "Blast": ["S1", "S2"],
                 "S+C": "S",
                 "B+S": "S",
                 "P+B": "S",
@@ -224,10 +214,8 @@
                 "O": "S",
                 "DD": "S",
                 "Oe": "S",
-                "Play": "S1",
-                "Play": "S2",
-                "Consume": "S1",
-                "Consume": "S2",
+                "Play": ["S1", "S2"],
+                "Consume": ["S1", "S2"],
                 "S+C": "S",
                 "C+P": "S",
                 "P+B": "S",
@@ -252,10 +240,8 @@
                 "D": "S",
                 "OO": "S",
                 "Di": "S",
-                "Sleep": "S1",
-                "Sleep": "S2",
-                "Consume": "S1",
-                "Consume": "S2",
+                "Sleep": ["S1", "S2"],
+                "Consume": ["S1", "S2"],
                 "S+C": "S",
                 "C+P": "S",
                 "B+S": "S",
@@ -278,10 +264,8 @@
                 "D": "S",
                 "OO": "S",
                 "De": "S",
-                "Play": "S1",
-                "Play": "S2",
-                "Blast": "S1",
-                "Blast": "S2",
+                "Play": ["S1", "S2"],
+                "Blast": ["S1", "S2"],
                 "C+P": "S",
                 "B+S": "S",
                 "P+B": "S",
@@ -308,10 +292,8 @@
             ],
             "crossReferences": {
               "S": {
-                "Sleep": "S1",
-                "Sleep": "S2",
-                "Consume": "S1",
-                "Consume": "S2"
+                "Sleep": ["S1", "S2"],
+                "Consume": ["S1", "S2"]
               }
             }
           },
@@ -324,10 +306,8 @@
             ],
             "crossReferences": {
               "S": {
-                "Consume": "S1",
-                "Consume": "S2",
-                "Play": "S1",
-                "Play": "S2"
+                "Consume": ["S1", "S2"],
+                "Play": ["S1", "S2"]
               }
             }
           }
@@ -342,10 +322,8 @@
             ],
             "crossReferences": {
               "S": {
-                "Blast": "S1",
-                "Blast": "S2",
-                "Sleep": "S1",
-                "Sleep": "S2"
+                "Blast": ["S1", "S2"],
+                "Sleep": ["S1", "S2"]
               }
             }
           },
@@ -358,10 +336,8 @@
             ],
             "crossReferences": {
               "S": {
-                "Play": "S1",
-                "Play": "S2",
-                "Blast": "S1",
-                "Blast": "S2"
+                "Play": ["S1", "S2"],
+                "Blast": ["S1", "S2"]
               }
             }
           }
