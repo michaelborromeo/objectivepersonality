@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const sampleChoiceStates = {
   'Ti': 'S',
   'Sleep': 'S',
@@ -11,6 +13,10 @@ export default function getCrossReferences(choiceStates, choiceGroups) {
   const crossReferenceGroups = {};
 
   for (let choice in choiceStates) {
+    if (!choiceStates.hasOwnProperty(choice)) {
+      continue;
+    }
+
     const state = choiceStates[choice];
 
     const crossReferences = findCrossReferences(choice, state, choiceGroups);
@@ -29,23 +35,41 @@ export function getCrossReferencesForChoice(crossReferences, choice) {
   const results = [];
 
   for (let choiceKey in crossReferences) {
-    const choiceCrossRefs = crossReferences[choiceKey].crossReferences;
+    if (!crossReferences.hasOwnProperty(choiceKey)) {
+      continue;
+    }
 
-    console.log(choiceCrossRefs)
+    const choiceKeyState = crossReferences[choiceKey].state;
+    const choiceCrossRefs = crossReferences[choiceKey].crossReferences;
 
     if (choiceCrossRefs[choice]) {
       const choiceState = choiceCrossRefs[choice];
 
-      if (choiceState.length) {
-        results.push(choice + ' (' + choiceState.join(', ') + ')');
+      if (_.isArray(choiceState)) {
+        results.push(`${choiceKey}${formatSaviorDemonState(choiceKeyState)}→${choice} (${choiceState.join(', ')})`);
       } else {
-        results.push(choice + ' (' + choiceState + ')');
+        if (isSavior(choiceState)) {
+          results.push(`${choiceKey}${formatSaviorDemonState(choiceKeyState)}`);
+        } else {
+          results.push(`${choiceKey}${formatSaviorDemonState(choiceKeyState)}→${choice}${formatSaviorDemonState(choiceState)}`);
+        }
       }
     }
-
   }
 
   return results;
+}
+
+function formatSaviorDemonState(state) {
+  if (isSavior(state)) {
+    return '';
+  }
+
+  return ` (${state})`;
+}
+
+function isSavior(state) {
+  return state === '?' || state === 'S?' || state === 'S';
 }
 
 function findCrossReferences(choice, state, choiceGroups) {

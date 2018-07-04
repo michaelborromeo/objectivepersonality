@@ -69,7 +69,7 @@ function getMatchLevel(choiceStates, type) {
   }
 
   return level;
-};
+}
 
 function typeHasDerivedChoice(type, derivedChoices) {
   for (let i = 0; i < derivedChoices.length; i++) {

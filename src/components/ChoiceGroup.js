@@ -29,7 +29,7 @@ class ChoiceGroup extends Component {
         choicePairComponents.push(
           <div key={i} className="choice-group-pair row">
             <div className="choice-group-description-left col-4 align-self-center">
-              {choicePair[0].description} {choicePair[0].parenthetical}
+              {choicePair[0].description} {this.renderParenthetical(choicePair[0].parenthetical)}
               <div className="choice-group-cross-references">
                 {this.formatCrossReferences(choicePair[0].choice)}
               </div>
@@ -43,7 +43,7 @@ class ChoiceGroup extends Component {
             </div>
             <div className="choice-group-choice col-1 align-self-center">{choicePair[1].choice}</div>
             <div className="choice-group-description-right col-4 align-self-center">
-              {choicePair[0].parenthetical} {choicePair[1].description}
+              {this.renderParenthetical(choicePair[1].parenthetical)} {choicePair[1].description}
               <div className="choice-group-cross-references">
                 {this.formatCrossReferences(choicePair[1].choice)}
               </div>
@@ -61,6 +61,14 @@ class ChoiceGroup extends Component {
         </div>
       </div>
     );
+  }
+
+  renderParenthetical(parenthetical) {
+    if (parenthetical) {
+      return ' (' + parenthetical + ')';
+    }
+
+    return '';
   }
 
   renderStateSelect(choice, states) {
@@ -100,9 +108,12 @@ class ChoiceGroup extends Component {
       return '(No cross references)';
     }
 
-    return 'Cross references: ' + _.map(crossReferences, crossRef => {
-      return <b>{crossRef}</b>;
-    });
+    const components = [<span key="-2">Cross references: </span>];
+    for (let i = 0; i < crossReferences.length; i++) {
+      components.push(<b className="choice-group-cross-reference" key={i}>{crossReferences[i]} </b>);
+    }
+
+    return components;
   }
 }
 

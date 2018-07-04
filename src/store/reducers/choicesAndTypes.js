@@ -16,11 +16,21 @@ export default (state = initialState, action) => {
       return initialState;
 
     case 'SET_CHOICE_STATE':
-      state.choiceStates[action.payload.choice] = action.payload.state;
-      state.matchLevels = getAllMatchLevels(state.choiceStates, state.types);
-      state.crossReferences = getCrossReferences(state.choiceStates, state.choiceGroups);
+      const choiceStates = state.choiceStates;
 
-      return state;
+      if (!action.payload.state) {
+        delete choiceStates[action.payload.choice];
+      } else {
+        choiceStates[action.payload.choice] = action.payload.state;
+      }
+
+      return {
+        choiceGroups: state.choiceGroups,
+        types: state.types,
+        choiceStates,
+        matchLevels: getAllMatchLevels(choiceStates, state.types),
+        crossReferences: getCrossReferences(choiceStates, state.choiceGroups)
+      };
 
     default:
       return state
