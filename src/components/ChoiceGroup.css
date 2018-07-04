@@ -1,0 +1,36 @@
+.choice-group {
+    margin-bottom: 25px;
+}
+
+.choice-group-pair {
+    background-color: #ddd;
+    padding: 9px;
+}
+
+.choice-group-name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.choice-group-choice {
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.choice-group-description-left {
+    display: inline-block;
+    text-align: right;
+    font-size: 0.9em;
+}
+
+.choice-group-description-right {
+    display: inline-block;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.choice-group-blank {
+    height: 15px;
+}
