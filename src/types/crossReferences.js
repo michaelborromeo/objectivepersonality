@@ -10,8 +10,8 @@ const sampleChoiceStates = {
 export default function getCrossReferences(choiceStates, choiceGroups) {
   const crossReferenceGroups = {};
 
-  for (let choice in sampleChoiceStates) {
-    const state = sampleChoiceStates[choice];
+  for (let choice in choiceStates) {
+    const state = choiceStates[choice];
 
     const crossReferences = findCrossReferences(choice, state, choiceGroups);
 
@@ -23,6 +23,29 @@ export default function getCrossReferences(choiceStates, choiceGroups) {
   }
 
   return crossReferenceGroups;
+}
+
+export function getCrossReferencesForChoice(crossReferences, choice) {
+  const results = [];
+
+  for (let choiceKey in crossReferences) {
+    const choiceCrossRefs = crossReferences[choiceKey].crossReferences;
+
+    console.log(choiceCrossRefs)
+
+    if (choiceCrossRefs[choice]) {
+      const choiceState = choiceCrossRefs[choice];
+
+      if (choiceState.length) {
+        results.push(choice + ' (' + choiceState.join(', ') + ')');
+      } else {
+        results.push(choice + ' (' + choiceState + ')');
+      }
+    }
+
+  }
+
+  return results;
 }
 
 function findCrossReferences(choice, state, choiceGroups) {

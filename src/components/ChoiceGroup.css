@@ -34,3 +34,8 @@
 .choice-group-blank {
     height: 15px;
 }
+
+.choice-group-cross-references {
+    font-size: 0.7em;
+    color: #777;
+}

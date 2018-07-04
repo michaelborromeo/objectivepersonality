@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
+import {getCrossReferencesForChoice} from '../types/crossReferences';
 import './ChoiceGroup.css';
 
 import 'react-select/dist/react-select.css';
@@ -25,20 +26,27 @@ class ChoiceGroup extends Component {
           <div key={i} className="choice-group-blank"/>
         );
       } else {
-        choicePairComponents.push(<div key={i} className="choice-group-pair row">
-            <div className="choice-group-description-left col-4 align-middle">
+        choicePairComponents.push(
+          <div key={i} className="choice-group-pair row">
+            <div className="choice-group-description-left col-4 align-self-center">
               {choicePair[0].description} {choicePair[0].parenthetical}
+              <div className="choice-group-cross-references">
+                {this.formatCrossReferences(choicePair[0].choice)}
+              </div>
             </div>
-            <div className="choice-group-choice col-1 align-middle">{choicePair[0].choice}</div>
-            <div className="choice-group-state col-1">
+            <div className="choice-group-choice col-1 align-self-center">{choicePair[0].choice}</div>
+            <div className="choice-group-state col-1 align-self-center">
               {this.renderStateSelect(choicePair[0].choice, choicePair[0].states)}
             </div>
-            <div className="choice-group-state col-1">
+            <div className="choice-group-state col-1 align-self-center">
               {this.renderStateSelect(choicePair[1].choice, choicePair[1].states)}
             </div>
-            <div className="choice-group-choice col-1">{choicePair[1].choice}</div>
-            <div className="choice-group-description-right col-4">
+            <div className="choice-group-choice col-1 align-self-center">{choicePair[1].choice}</div>
+            <div className="choice-group-description-right col-4 align-self-center">
               {choicePair[0].parenthetical} {choicePair[1].description}
+              <div className="choice-group-cross-references">
+                {this.formatCrossReferences(choicePair[1].choice)}
+              </div>
             </div>
           </div>
         );
@@ -60,10 +68,15 @@ class ChoiceGroup extends Component {
       <VirtualizedSelect
         placeholder=""
         options={this.addQuestionMarksToStates(states)}
-        onChange={(selectValue) => this.setState({[choice]: selectValue})}
+        onChange={selectValue => this.updateChoiceState(choice, selectValue)}
         value={this.state[choice]}
       />
     );
+  }
+
+  updateChoiceState(choice, selectValue) {
+    this.setState({[choice]: selectValue});
+    this.props.setChoiceState(choice, selectValue ? selectValue.value : null);
   }
 
   addQuestionMarksToStates(states) {
@@ -78,6 +91,18 @@ class ChoiceGroup extends Component {
     updatedStates.unshift({label: '?', value: '?'});
 
     return updatedStates;
+  }
+
+  formatCrossReferences(choice) {
+    const crossReferences = getCrossReferencesForChoice(this.props.crossReferences, choice);
+
+    if (!crossReferences.length) {
+      return '(No cross references)';
+    }
+
+    return 'Cross references: ' + _.map(crossReferences, crossRef => {
+      return <b>{crossRef}</b>;
+    });
   }
 }
 
