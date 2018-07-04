@@ -920,8 +920,7 @@
       "description": "Soft with the tribe, careful with words",
       "label": "Feminine Extroverted Decider",
       "states": [
-       "S",
-       "D"
+       "S"
       ]
      },
      {
@@ -929,8 +928,7 @@
       "description": "Shoves on the tribe, says it how it is",
       "label": "Masculine Extroverted Decider",
       "states": [
-       "S",
-       "D"
+       "S"
       ]
      }
     ],
@@ -940,8 +938,7 @@
       "description": "Sight, written, picture, open, tastes, tries",
       "label": "Feminine Sensing",
       "states": [
-       "S",
-       "D"
+       "S"
       ]
      },
      {
@@ -949,8 +946,7 @@
       "description": "Words, sounds, rhythm, weight, movement, texture",
       "label": "Masculine Sensing",
       "states": [
-       "S",
-       "D"
+       "S"
       ]
      }
     ]
