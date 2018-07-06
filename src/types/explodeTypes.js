@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const contents = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/OpChoices.json')));
+const contents = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/OpDataInput.json')));
 
 const animalTransforms = {
   'Fi/Ni': ['SCB', 'SCP', 'SBC', 'SBP'],
@@ -231,7 +231,7 @@ function getAnimalBreakdown(animal) {
 function writeToFile(content) {
   const output = JSON.stringify(content, null, ' ');
 
-  fs.writeFile(path.join(__dirname, '../data/OpOutput.json'), output, 'utf8', function (err) {
+  fs.writeFile(path.join(__dirname, '../data/OpDataExploded.json'), output, 'utf8', function (err) {
     if (err) {
       return console.log(err);
     }

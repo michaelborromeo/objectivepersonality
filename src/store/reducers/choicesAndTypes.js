@@ -1,5 +1,5 @@
 import getAllMatchLevels from '../../types/getAllMatchLevels';
-import opData from '../../data/OpOutput';
+import opData from '../../data/OpDataExploded';
 import getCrossReferences from '../../types/crossReferences';
 
 const initialState = {
