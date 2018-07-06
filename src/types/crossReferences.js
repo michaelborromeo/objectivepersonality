@@ -1,13 +1,13 @@
 import _ from 'lodash';
 
-const sampleChoiceStates = {
-  'Ti': 'S',
-  'Sleep': 'S',
-  'Se': 'S',
-  'DD': 'S',
-  'ExxP': 'S',
-  'Sensing-M': 'S'
-};
+//const sampleChoiceStates = {
+//  'Ti': 'S',
+//  'Sleep': 'S',
+//  'Se': 'S',
+//  'DD': 'S',
+//  'ExxP': 'S',
+//  'Sensing-M': 'S'
+//};
 
 export default function getCrossReferences(choiceStates, choiceGroups) {
   const crossReferenceGroups = {};

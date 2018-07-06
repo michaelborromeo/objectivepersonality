@@ -1,0 +1,25 @@
+.Summary {
+    margin-bottom: 40px;
+}
+
+.summary-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.summary-no-match {
+    font-size: 0.7em;
+    color: #777777;
+    padding-left: 15px;
+    padding-top: 10px;
+    margin-bottom: 25px;
+}
+
+.summary-type {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.bold {
+    font-weight: bold;
+}

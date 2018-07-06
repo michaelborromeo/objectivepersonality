@@ -1,9 +1,14 @@
+.Types {
+    margin-bottom: 40px;
+}
+
 .types-temperaments {
     margin-bottom: 25px;
 }
 
 .types-temperaments-name {
     font-weight: bold;
+    font-size: 1.1em;
 }
 
 .types-temperaments-IxxP {

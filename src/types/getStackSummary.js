@@ -18,7 +18,7 @@ export default function getStackSummary(type) {
     animal1,
     animal2,
     animalJumper ? animal4 : animal3,
-    animalJumper ? animal3 : animal4,
+    animalJumper ? animal3 : animal4
   ];
 
   const animals = [{
@@ -64,8 +64,7 @@ export default function getStackSummary(type) {
     activations: getActivations(functionOrder[3], animal1, animal2, animal3)
   }];
 
-
-  return { functions, animals };
+  return {functions, animals};
 }
 
 function getMissingAnimal(animal1, animal2, animal3) {

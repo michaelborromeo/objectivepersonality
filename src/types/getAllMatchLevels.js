@@ -1,48 +1,48 @@
-const sampleTypes = [{
-  "type": "Fi/Ni SC/B MM",
-  "derivedChoices": [
-    "D",
-    "OO",
-    "Di",
-    "S",
-    "C",
-    "B",
-    "SC",
-    "SC/B",
-    "NF-Savior",
-    "ST-Demon",
-    "IxxP",
-    "Fi-Savior",
-    "Ni-Savior",
-    "Te-Demon",
-    "Sensing-M",
-    "De-M"
-  ]
-}, {
-  "type": "Se/Ti CS/B MF",
-  "derivedChoices": [
-    "O",
-    "DD",
-    "Oe",
-    "C",
-    "S",
-    "B",
-    "CS",
-    "CS/B",
-    "ST-Savior",
-    "NF-Demon",
-    "ExxP",
-    "Se-Savior",
-    "Ti-Savior",
-    "Ni-Demon",
-    "Sensing-M",
-    "De-F"
-  ]
-}];
-
-const sampleChoiceStates = {
-  'Blast': '2?'
-};
+//const sampleTypes = [{
+//  "type": "Fi/Ni SC/B MM",
+//  "derivedChoices": [
+//    "D",
+//    "OO",
+//    "Di",
+//    "S",
+//    "C",
+//    "B",
+//    "SC",
+//    "SC/B",
+//    "NF-Savior",
+//    "ST-Demon",
+//    "IxxP",
+//    "Fi-Savior",
+//    "Ni-Savior",
+//    "Te-Demon",
+//    "Sensing-M",
+//    "De-M"
+//  ]
+//}, {
+//  "type": "Se/Ti CS/B MF",
+//  "derivedChoices": [
+//    "O",
+//    "DD",
+//    "Oe",
+//    "C",
+//    "S",
+//    "B",
+//    "CS",
+//    "CS/B",
+//    "ST-Savior",
+//    "NF-Demon",
+//    "ExxP",
+//    "Se-Savior",
+//    "Ti-Savior",
+//    "Ni-Demon",
+//    "Sensing-M",
+//    "De-F"
+//  ]
+//}];
+//
+//const sampleChoiceStates = {
+//  'Blast': '2?'
+//};
 
 export default function getAllMatchLevels(choiceStates, types) {
   const matchLevels = {};

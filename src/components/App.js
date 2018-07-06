@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Choices from './Choices';
 import Types from './Types';
+import Summary from './Summary';
 import './App.css';
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App container-fluid">
         <Choices/>
         <Types/>
+        <Summary/>
       </div>
     );
   }

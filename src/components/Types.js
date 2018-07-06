@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './Types.css';
 
-const animals = ['SC/B', 'SC/P', 'SB/C', 'SB/P', 'CS/B', 'CS/P', 'CP/S', 'CP/B', 'BS/C', 'BS/P', 'BP/S', 'BP/C', 'PC/S', 'PC/B', 'PB/S', 'PB/C'];
+//const animals = ['SC/B', 'SC/P', 'SB/C', 'SB/P', 'CS/B', 'CS/P', 'CP/S', 'CP/B', 'BS/C', 'BS/P', 'BP/S', 'BP/C', 'PC/S', 'PC/B', 'PB/S', 'PB/C'];
 const temperaments = ['IxxP', 'IxxJ', 'ExxP', 'ExxJ'];
 
 class Types extends Component {
