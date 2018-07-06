@@ -12,6 +12,7 @@ class Choices extends Component {
       choiceGroupComponents.push(
         <ChoiceGroup key={i}
           choiceGroup={choiceGroup}
+          choiceStates={this.props.choiceStates}
           crossReferences={this.props.crossReferences}
           setChoiceState={this.props.setChoiceState}
         />);
@@ -27,6 +28,7 @@ class Choices extends Component {
 
 const mapStateToProps = state => ({
   choiceGroups: state.choicesAndTypes.choiceGroups,
+  choiceStates: state.choicesAndTypes.choiceStates,
   crossReferences: state.choicesAndTypes.crossReferences
 });
 

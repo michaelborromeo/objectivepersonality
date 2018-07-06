@@ -93,6 +93,7 @@ function explodeTypes() {
   };
 
   console.log(output);
+  writeToFile(output);
 }
 
 function formatAnimal(animal) {

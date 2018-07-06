@@ -15,6 +15,11 @@ class ChoiceGroup extends Component {
   }
 
   render() {
+    // need to create a choice state that's usable by the select component
+    const choiceStates = _.transform(this.props.choiceStates, (result, value, key) => {
+      result[key] = {value, label: value};
+    });
+
     const choiceGroup = this.props.choiceGroup;
 
     const choicePairComponents = [];
@@ -36,10 +41,10 @@ class ChoiceGroup extends Component {
             </div>
             <div className="choice-group-choice col-1 align-self-center">{choicePair[0].choice}</div>
             <div className="choice-group-state col-1 align-self-center">
-              {this.renderStateSelect(choicePair[0].choice, choicePair[0].states)}
+              {this.renderStateSelect(choicePair[0].choice, choicePair[0].states, choiceStates)}
             </div>
             <div className="choice-group-state col-1 align-self-center">
-              {this.renderStateSelect(choicePair[1].choice, choicePair[1].states)}
+              {this.renderStateSelect(choicePair[1].choice, choicePair[1].states, choiceStates)}
             </div>
             <div className="choice-group-choice col-1 align-self-center">{choicePair[1].choice}</div>
             <div className="choice-group-description-right col-4 align-self-center">
@@ -71,13 +76,13 @@ class ChoiceGroup extends Component {
     return '';
   }
 
-  renderStateSelect(choice, states) {
+  renderStateSelect(choice, states, choiceStates) {
     return (
       <VirtualizedSelect
         placeholder=""
         options={this.addQuestionMarksToStates(states)}
         onChange={selectValue => this.updateChoiceState(choice, selectValue)}
-        value={this.state[choice]}
+        value={choiceStates[choice]}
       />
     );
   }
