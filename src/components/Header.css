@@ -5,5 +5,9 @@
 .header-text {
     font-size: 2em;
     font-weight: bold;
+}
+
+.header-github {
+    font-size: 0.8em;
     margin-bottom: 30px;
 }

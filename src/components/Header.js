@@ -8,6 +8,11 @@ class Header extends Component {
     return (
       <div className="Header">
         <div className="header-text">Objective Personality Helper</div>
+        <div className="header-github">
+          <a href="https://github.com/michaelborromeo/objectivepersonality" target="_blank">
+            https://github.com/michaelborromeo/objectivepersonality
+          </a>
+        </div>
         <div className="header-reset-link row">
           <div className="col-1 offset-2">
             <button className="btn btn-link" onClick={this.copyLink}>Copy Link</button>
