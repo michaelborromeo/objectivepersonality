@@ -15,7 +15,7 @@ class Header extends Component {
         </div>
         <div className="header-reset-link row">
           <div className="col-1 offset-2">
-            <button className="btn btn-link" onClick={this.copyLink}>Copy Link</button>
+            <button className="btn btn-primary" onClick={this.copyLink}>Copy Link</button>
           </div>
           <div className="col-6">
             <input className="form-control"
@@ -25,7 +25,7 @@ class Header extends Component {
               id="url"/>
           </div>
           <div className="col-1">
-            <button className="btn btn-link" onClick={this.props.resetChoices}>
+            <button className="btn btn-danger" onClick={this.props.resetChoices}>
               Reset
             </button>
           </div>

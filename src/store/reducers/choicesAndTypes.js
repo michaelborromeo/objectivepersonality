@@ -5,16 +5,21 @@ import getCrossReferences from '../../types/crossReferences';
 const initialState = getInitialState();
 
 export default (state = initialState, action) => {
+  let matchLevels;
+
   switch (action.type) {
     case 'RESET':
       window.location.hash = '';
+
+      matchLevels = getAllMatchLevels({}, opData.types);
 
       return {
         choiceGroups: opData.choiceGroups,
         types: opData.types,
         choiceStates: {},
-        matchLevels: {},
+        matchLevels,
         crossReferences: {},
+        matchedTypes: getMatchedTypes(opData.types, matchLevels),
         encodedChoiceStates: ''
       };
 
@@ -30,12 +35,15 @@ export default (state = initialState, action) => {
       const encodedChoiceStates = btoa(JSON.stringify(choiceStates));
       window.location = `#${encodedChoiceStates}`;
 
+      matchLevels = getAllMatchLevels(choiceStates, state.types);
+
       return {
         choiceGroups: state.choiceGroups,
         types: state.types,
         choiceStates,
-        matchLevels: getAllMatchLevels(choiceStates, state.types),
+        matchLevels,
         crossReferences: getCrossReferences(choiceStates, state.choiceGroups),
+        matchedTypes: getMatchedTypes(state.types, matchLevels),
         encodedChoiceStates
       };
 
@@ -44,15 +52,30 @@ export default (state = initialState, action) => {
   }
 }
 
+function getMatchedTypes(types, matchLevels) {
+  const matches = [];
+
+  for (let i = 0; i < types.length; i++) {
+    const type = types[i].type;
+    if (matchLevels[type] === 100) {
+      matches.push(type);
+    }
+  }
+
+  return matches;
+}
+
 function getInitialState() {
   const hashContent = getChoiceStatesFromHash();
+  const matchLevels = getAllMatchLevels(hashContent.choiceStates, opData.types);
 
   return {
     choiceGroups: opData.choiceGroups,
     types: opData.types,
     choiceStates: hashContent.choiceStates,
-    matchLevels: getAllMatchLevels(hashContent.choiceStates, opData.types),
+    matchLevels,
     crossReferences: getCrossReferences(hashContent.choiceStates, opData.choiceGroups),
+    matchedTypes: getMatchedTypes(opData.types, matchLevels),
     encodedChoiceStates: hashContent.hash
   };
 }

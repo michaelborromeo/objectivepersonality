@@ -9,12 +9,10 @@ import 'react-virtualized-select/styles.css';
 import VirtualizedSelect from 'react-virtualized-select';
 
 class ChoiceGroup extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const foundMatch = this.props.matchedTypes.length === 1;
+    const impossibleType = this.props.matchedTypes.length === 0;
+
     // need to create a choice state that's usable by the select component
     const choiceStates = _.transform(this.props.choiceStates, (result, value, key) => {
       result[key] = {value, label: value};
@@ -40,10 +38,12 @@ class ChoiceGroup extends Component {
               </div>
             </div>
             <div className="choice-group-choice col-1 align-self-center">{choicePair[0].choice}</div>
-            <div className="choice-group-state col-1 align-self-center">
+            <div
+              className={`choice-group-state col-1 align-self-center ${foundMatch ? 'found-match' : ''} ${impossibleType ? 'impossible-type' : ''}`}>
               {this.renderStateSelect(choicePair[0].choice, choicePair[0].states, choiceStates)}
             </div>
-            <div className="choice-group-state col-1 align-self-center">
+            <div
+              className={`choice-group-state col-1 align-self-center ${foundMatch ? 'found-match' : ''} ${impossibleType ? 'impossible-type' : ''}`}>
               {this.renderStateSelect(choicePair[1].choice, choicePair[1].states, choiceStates)}
             </div>
             <div className="choice-group-choice col-1 align-self-center">{choicePair[1].choice}</div>
@@ -88,7 +88,6 @@ class ChoiceGroup extends Component {
   }
 
   updateChoiceState(choice, selectValue) {
-    this.setState({[choice]: selectValue});
     this.props.setChoiceState(choice, selectValue ? selectValue.value : null);
   }
 

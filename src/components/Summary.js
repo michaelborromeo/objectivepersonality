@@ -5,7 +5,7 @@ import getStackSummary from '../types/getStackSummary';
 
 class Summary extends Component {
   render() {
-    const matchedTypes = this.getMatchedTypes();
+    const matchedTypes = this.props.matchedTypes;
 
     if (matchedTypes.length !== 1) {
       return this.createNoMatch();
@@ -109,24 +109,12 @@ class Summary extends Component {
 
     return rows;
   }
-
-  getMatchedTypes() {
-    const matches = [];
-
-    for (let i = 0; i < this.props.types.length; i++) {
-      const type = this.props.types[i].type;
-      if (this.props.matchLevels[type] === 100) {
-        matches.push(type);
-      }
-    }
-
-    return matches;
-  }
 }
 
 const mapStateToProps = state => ({
   types: state.choicesAndTypes.types,
-  matchLevels: state.choicesAndTypes.matchLevels
+  matchLevels: state.choicesAndTypes.matchLevels,
+  matchedTypes: state.choicesAndTypes.matchedTypes
 });
 
 export default connect(mapStateToProps)(Summary);

@@ -1,3 +1,11 @@
 .Choices {
     margin-bottom: 40px;
 }
+
+.impossible-type .Select .Select-control {
+    background-color: #ffd1d1 !important;
+}
+
+.found-match .Select .Select-control {
+    background-color: rgb(205, 249, 191) !important;;
+}

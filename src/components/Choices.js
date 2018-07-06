@@ -14,6 +14,7 @@ class Choices extends Component {
           choiceGroup={choiceGroup}
           choiceStates={this.props.choiceStates}
           crossReferences={this.props.crossReferences}
+          matchedTypes={this.props.matchedTypes}
           setChoiceState={this.props.setChoiceState}
         />);
     }
@@ -29,7 +30,8 @@ class Choices extends Component {
 const mapStateToProps = state => ({
   choiceGroups: state.choicesAndTypes.choiceGroups,
   choiceStates: state.choicesAndTypes.choiceStates,
-  crossReferences: state.choicesAndTypes.crossReferences
+  crossReferences: state.choicesAndTypes.crossReferences,
+  matchedTypes: state.choicesAndTypes.matchedTypes
 });
 
 const mapDispatchToProps = dispatch => ({
