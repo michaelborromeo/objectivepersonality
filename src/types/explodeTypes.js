@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const contents = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/OpDataInput.json')));
+const types = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/input/OpTypes.json')));
+const choiceGroups = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/input/OpChoices.json')));
 
 const animalTransforms = {
   'Fi/Ni': ['SCB', 'SCP', 'SBC', 'SBP'],
@@ -50,12 +51,12 @@ explodeTypes();
 function explodeTypes() {
   const newTypes = [];
 
-  for (let i = 0; i < contents.types.length; i++) {
-    const type = contents.types[i].type;
+  for (let i = 0; i < types.length; i++) {
+    const type = types[i];
     const animals = animalTransforms[type];
 
     const letters = getLetters(type);
-    const temperment = getTemperment(type);
+    const temperament = getTemperament(type);
     const saviorsAndDemons = getSaviorsAndDemons(type);
     const leadNeeds = getLeadNeeds(type);
     const middleNeeds = getMiddleNeeds(type);
@@ -78,7 +79,7 @@ function explodeTypes() {
         newType.derivedChoices = newType.derivedChoices.concat(chargedNeeds);
         newType.derivedChoices = newType.derivedChoices.concat(animalBreakdown);
         newType.derivedChoices = newType.derivedChoices.concat(letters);
-        newType.derivedChoices = newType.derivedChoices.concat(temperment);
+        newType.derivedChoices = newType.derivedChoices.concat(temperament);
         newType.derivedChoices = newType.derivedChoices.concat(saviorsAndDemons);
         newType.derivedChoices = newType.derivedChoices.concat(energy.choices);
 
@@ -88,7 +89,7 @@ function explodeTypes() {
   }
 
   const output = {
-    choiceGroups: contents.choiceGroups,
+    choiceGroups,
     types: newTypes
   };
 
@@ -173,7 +174,7 @@ function getLetters(type) {
   return [saviorLetters + '-Savior', demonLetters + '-Demon'];
 }
 
-function getTemperment(type) {
+function getTemperament(type) {
   const letter1 = type[0];
   const ei1 = type[1];
   const letter2 = type[3];
@@ -232,7 +233,7 @@ function getAnimalBreakdown(animal) {
 function writeToFile(content) {
   const output = JSON.stringify(content, null, ' ');
 
-  fs.writeFile(path.join(__dirname, '../data/OpDataExploded.json'), output, 'utf8', function (err) {
+  fs.writeFile(path.join(__dirname, '../data/output/OpCombinedAndExploded.json'), output, 'utf8', function (err) {
     if (err) {
       return console.log(err);
     }

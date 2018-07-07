@@ -4,7 +4,7 @@ const path = require('path');
 const getMatchLevel = require('./getAllMatchLevels');
 const getCrossReferences = require('./crossReferences');
 
-const opData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/OpDataExploded.json')));
+const opData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/output/OpCombinedAndExploded.json')));
 
 const sampleChoiceStates = {
   'Ti': 'S',
