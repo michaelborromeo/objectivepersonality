@@ -9,7 +9,8 @@ class Header extends Component {
       <div className="Header">
         <div className="header-text">Objective Personality Helper</div>
         <div className="header-github">
-          <a href="https://github.com/michaelborromeo/objectivepersonality" target="_blank">
+          <a href="https://github.com/michaelborromeo/objectivepersonality" target="_blank"
+            rel="noopener noreferrer">
             https://github.com/michaelborromeo/objectivepersonality
           </a>
         </div>

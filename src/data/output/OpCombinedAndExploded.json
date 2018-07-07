@@ -1,978 +1,976 @@
 {
- "choiceGroups": {
-  "choiceGroups": [
-   {
-    "choicePairs": [
-     [
-      {
-       "choice": "O",
-       "description": "Life is about things, control, and chaos",
-       "label": "Single Observer",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "DD": "S",
-         "Oi": "S",
-         "Oe": "S",
-         "IxxJ": "S",
-         "ExxP": "S"
-        }
-       }
-      },
-      {
-       "choice": "D",
-       "description": "Life is about comparison of the self versus the tribe",
-       "label": "Single Decider",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "OO": "S",
-         "Di": "S",
-         "De": "S",
-         "ExxJ": "S",
-         "IxxP": "S"
-        }
+ "choiceGroups": [
+  {
+   "choicePairs": [
+    [
+     {
+      "choice": "O",
+      "description": "Life is about things, control, and chaos",
+      "label": "Single Observer",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "DD": "S",
+        "Oi": "S",
+        "Oe": "S",
+        "IxxJ": "S",
+        "ExxP": "S"
        }
       }
-     ],
-     [],
-     [
-      {
-       "choice": "DD",
-       "description": "Relatively calm balance with self and tribe",
-       "label": "Double Decider",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "O": "S",
-         "Oi": "S",
-         "Oe": "S",
-         "IxxJ": "S",
-         "ExxP": "S"
-        }
-       }
-      },
-      {
-       "choice": "OO",
-       "description": "Relatively calm balance with control and chaos",
-       "label": "Double Observer",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "D": "S",
-         "Di": "S",
-         "De": "S",
-         "ExxJ": "S",
-         "IxxP": "S"
-        }
+     },
+     {
+      "choice": "D",
+      "description": "Life is about comparison of the self versus the tribe",
+      "label": "Single Decider",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "OO": "S",
+        "Di": "S",
+        "De": "S",
+        "ExxJ": "S",
+        "IxxP": "S"
        }
       }
-     ],
-     [],
-     [
-      {
-       "choice": "Di",
-       "description": "Prioritizes self decisions before tribe's",
-       "label": "Introverted Decider",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "IxxP": "S",
-         "ExxP": "S",
-         "IxxJ": "S",
-         "Sleep": [
-          "S1",
-          "S2"
-         ],
-         "Consume": [
-          "S1",
-          "S2"
-         ],
-         "S+C": "S",
-         "C+P": "S",
-         "B+S": "S",
-         "Fi": "S",
-         "Ti": "S",
-         "Fe": "D",
-         "Te": "D"
-        }
-       }
-      },
-      {
-       "choice": "De",
-       "description": "Prioritizes tribe's decisions above self",
-       "label": "Extroverted Decider",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "ExxJ": "S",
-         "ExxP": "S",
-         "IxxJ": "S",
-         "Play": [
-          "S1",
-          "S2"
-         ],
-         "Blast": [
-          "S1",
-          "S2"
-         ],
-         "C+P": "S",
-         "B+S": "S",
-         "P+B": "S",
-         "Fi": "D",
-         "Ti": "D",
-         "Fe": "S",
-         "Te": "S"
-        }
-       }
-      }
-     ],
-     [
-      {
-       "choice": "Oi",
-       "description": "Controlling, is not open to new info",
-       "label": "Introverted Observer",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "ExxJ": "S",
-         "IxxP": "S",
-         "IxxJ": "S",
-         "Sleep": [
-          "S1",
-          "S2"
-         ],
-         "Blast": [
-          "S1",
-          "S2"
-         ],
-         "S+C": "S",
-         "B+S": "S",
-         "P+B": "S",
-         "Ni": "S",
-         "Si": "S",
-         "Ne": "D",
-         "Se": "D"
-        }
-       }
-      },
-      {
-       "choice": "Oe",
-       "description": "Chaotic, takes more info than they organize",
-       "label": "Extroverted Observer",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "ExxJ": "S",
-         "IxxP": "S",
-         "ExxP": "S",
-         "Play": [
-          "S1",
-          "S2"
-         ],
-         "Consume": [
-          "S1",
-          "S2"
-         ],
-         "S+C": "S",
-         "C+P": "S",
-         "P+B": "S",
-         "Ne": "S",
-         "Se": "S",
-         "Ni": "D",
-         "Si": "D"
-        }
-       }
-      }
-     ],
-     [],
-     [
-      {
-       "choice": "IxxJ",
-       "description": "Over organizes known info, slow to gather new info",
-       "label": "IxxJ",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "O": "S",
-         "DD": "S",
-         "Oi": "S",
-         "Sleep": [
-          "S1",
-          "S2"
-         ],
-         "Blast": [
-          "S1",
-          "S2"
-         ],
-         "S+C": "S",
-         "B+S": "S",
-         "P+B": "S",
-         "Ni": "S",
-         "Si": "S",
-         "Ne": "D",
-         "Se": "D"
-        }
-       }
-      },
-      {
-       "choice": "ExxP",
-       "description": "Over gathers new info, slow to organize known info",
-       "label": "ExxP",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "O": "S",
-         "DD": "S",
-         "Oe": "S",
-         "Play": [
-          "S1",
-          "S2"
-         ],
-         "Consume": [
-          "S1",
-          "S2"
-         ],
-         "S+C": "S",
-         "C+P": "S",
-         "P+B": "S",
-         "Ne": "S",
-         "Se": "S",
-         "Ni": "D",
-         "Si": "D"
-        }
-       }
-      }
-     ],
-     [
-      {
-       "choice": "IxxP",
-       "description": "Builds up self so the tribe can be inspired",
-       "label": "IxxP",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "D": "S",
-         "OO": "S",
-         "Di": "S",
-         "Sleep": [
-          "S1",
-          "S2"
-         ],
-         "Consume": [
-          "S1",
-          "S2"
-         ],
-         "S+C": "S",
-         "C+P": "S",
-         "B+S": "S",
-         "Ti": "S",
-         "Fi": "S",
-         "Te": "D",
-         "Fe": "D"
-        }
-       }
-      },
-      {
-       "choice": "ExxJ",
-       "description": "Builds up the tribe so the self can be inspired",
-       "label": "ExxJ",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "D": "S",
-         "OO": "S",
-         "De": "S",
-         "Play": [
-          "S1",
-          "S2"
-         ],
-         "Blast": [
-          "S1",
-          "S2"
-         ],
-         "C+P": "S",
-         "B+S": "S",
-         "P+B": "S",
-         "Te": "S",
-         "Fe": "S",
-         "Ti": "D",
-         "Fi": "D"
-        }
-       }
-      }
-     ]
+     }
     ],
-    "group": "Needs"
-   },
-   {
-    "choicePairs": [
-     [
-      {
-       "choice": "S+C",
-       "description": "Deep inner world of taking in info and processing",
-       "label": "Sleep and Consume",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "Sleep": [
-          "S1",
-          "S2"
-         ],
-         "Consume": [
-          "S1",
-          "S2"
-         ]
-        }
-       }
-      },
-      {
-       "choice": "C+P",
-       "description": "Over gathers then wants to do something with it",
-       "label": "Consume and Play",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "Consume": [
-          "S1",
-          "S2"
-         ],
-         "Play": [
-          "S1",
-          "S2"
-         ]
-        }
+    [],
+    [
+     {
+      "choice": "DD",
+      "description": "Relatively calm balance with self and tribe",
+      "label": "Double Decider",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "O": "S",
+        "Oi": "S",
+        "Oe": "S",
+        "IxxJ": "S",
+        "ExxP": "S"
        }
       }
-     ],
-     [
-      {
-       "choice": "B+S",
-       "description": "Reworks the same info and then shares knowledge",
-       "label": "Blast and Sleep",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "Blast": [
-          "S1",
-          "S2"
-         ],
-         "Sleep": [
-          "S1",
-          "S2"
-         ]
-        }
-       }
-      },
-      {
-       "choice": "P+B",
-       "description": "Expends energy and shares knowledge",
-       "label": "Play and Blast",
-       "states": [
-        "S"
-       ],
-       "crossReferences": {
-        "S": {
-         "Play": [
-          "S1",
-          "S2"
-         ],
-         "Blast": [
-          "S1",
-          "S2"
-         ]
-        }
+     },
+     {
+      "choice": "OO",
+      "description": "Relatively calm balance with control and chaos",
+      "label": "Double Observer",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "D": "S",
+        "Di": "S",
+        "De": "S",
+        "ExxJ": "S",
+        "IxxP": "S"
        }
       }
-     ],
-     [],
-     [
-      {
-       "choice": "Sleep",
-       "description": "Preserving energy, processing, introspective",
-       "label": "Sleep",
-       "parenthetical": "Di+Oi",
-       "states": [
-        "S",
-        "S1",
-        "S2",
-        "3",
-        "4"
-       ],
-       "crossReferences": {
-        "S": {
-         "S+C": "S",
-         "B+S": "S"
-        },
-        "S1": {
-         "S+C": "S",
-         "B+S": "S",
-         "Di": "S",
-         "Oi": "S",
-         "Fi": "S",
-         "Ti": "S",
-         "Si": "S",
-         "Ni": "S"
-        },
-        "S2": {
-         "S+C": "S",
-         "B+S": "S"
-        },
-        "S3": {},
-        "S4": {}
-       }
-      },
-      {
-       "choice": "Play",
-       "description": "Expending energy, work, doing, show off",
-       "label": "Play",
-       "parenthetical": "De+Oe",
-       "states": [
-        "S",
-        "S1",
-        "S2",
-        "3",
-        "4"
-       ],
-       "crossReferences": {
-        "S": {
-         "C+P": "S",
-         "P+B": "S"
-        },
-        "S1": {
-         "C+P": "S",
-         "P+B": "S",
-         "De": "S",
-         "Oe": "S",
-         "Fe": "S",
-         "Te": "S",
-         "Se": "S",
-         "Ne": "S"
-        },
-        "S2": {
-         "C+P": "S",
-         "P+B": "S"
-        },
-        "S3": {},
-        "S4": {}
-       }
-      }
-     ],
-     [
-      {
-       "choice": "Consume",
-       "description": "Learning, taking in & respecting info for self",
-       "label": "Consume",
-       "parenthetical": "Di+Oe",
-       "states": [
-        "S",
-        "S1",
-        "S2",
-        "3",
-        "4"
-       ],
-       "crossReferences": {
-        "S": {
-         "S+C": "S",
-         "C+P": "S"
-        },
-        "S1": {
-         "S+C": "S",
-         "C+P": "S",
-         "Di": "S",
-         "Oe": "S",
-         "Fi": "S",
-         "Ti": "S",
-         "Se": "S",
-         "Ne": "S"
-        },
-        "S2": {
-         "S+C": "S",
-         "C+P": "S"
-        },
-        "S3": {},
-        "S4": {}
-       }
-      },
-      {
-       "choice": "Blast",
-       "description": "Teaching, controlling, get started, bragging",
-       "label": "Blast",
-       "parenthetical": "De+Oi",
-       "states": [
-        "S",
-        "S1",
-        "S2",
-        "3",
-        "4"
-       ],
-       "crossReferences": {
-        "S": {
-         "B+S": "S",
-         "P+B": "S"
-        },
-        "S1": {
-         "B+S": "S",
-         "P+B": "S",
-         "De": "S",
-         "Oi": "S",
-         "Fe": "S",
-         "Te": "S",
-         "Si": "S",
-         "Ni": "S"
-        },
-        "S2": {
-         "B+S": "S",
-         "P+B": "S"
-        },
-        "S3": {},
-        "S4": {}
-       }
-      }
-     ]
+     }
     ],
-    "group": "Animals"
-   },
-   {
-    "choicePairs": [
-     [
-      {
-       "choice": "SF",
-       "description": "Valuing something in the physical world",
-       "label": "SF",
-       "parenthetical": "Popularity",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Fe": "S",
-         "Fi": "S",
-         "Se": "S",
-         "Si": "S",
-         "NT": "D"
-        },
-        "D": {
-         "Te": "S",
-         "Ti": "S",
-         "Ne": "S",
-         "Ni": "S",
-         "NT": "S"
-        }
-       }
-      },
-      {
-       "choice": "NT",
-       "description": "Reasons in the abstract world",
-       "label": "NT",
-       "parenthetical": "Nerdy",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Te": "S",
-         "Ti": "S",
-         "Ne": "S",
-         "Ni": "S",
-         "SF": "D"
-        },
-        "D": {
-         "Fe": "S",
-         "Fi": "S",
-         "Se": "S",
-         "Si": "S",
-         "SF": "S"
-        }
+    [],
+    [
+     {
+      "choice": "Di",
+      "description": "Prioritizes self decisions before tribe's",
+      "label": "Introverted Decider",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "IxxP": "S",
+        "ExxP": "S",
+        "IxxJ": "S",
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "C+P": "S",
+        "B+S": "S",
+        "Fi": "S",
+        "Ti": "S",
+        "Fe": "D",
+        "Te": "D"
        }
       }
-     ],
-     [
-      {
-       "choice": "ST",
-       "description": "Reasons in the physical world",
-       "label": "ST",
-       "parenthetical": "Reporter",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Te": "S",
-         "Ti": "S",
-         "Se": "S",
-         "Si": "S",
-         "NF": "D"
-        },
-        "D": {
-         "Fe": "S",
-         "Fi": "S",
-         "Ne": "S",
-         "Ni": "S",
-         "NF": "S"
-        }
-       }
-      },
-      {
-       "choice": "NF",
-       "description": "Valuing something in the abstract world",
-       "label": "NF",
-       "parenthetical": "Hippie",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Fe": "S",
-         "Fi": "S",
-         "Ne": "S",
-         "Ni": "S",
-         "ST": "D"
-        },
-        "D": {
-         "Te": "S",
-         "Ti": "S",
-         "Se": "S",
-         "Si": "S",
-         "ST": "S"
-        }
+     },
+     {
+      "choice": "De",
+      "description": "Prioritizes tribe's decisions above self",
+      "label": "Extroverted Decider",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "ExxJ": "S",
+        "ExxP": "S",
+        "IxxJ": "S",
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "C+P": "S",
+        "B+S": "S",
+        "P+B": "S",
+        "Fi": "D",
+        "Ti": "D",
+        "Fe": "S",
+        "Te": "S"
        }
       }
-     ]
+     }
     ],
-    "group": "Letters"
-   },
-   {
-    "choicePairs": [
-     [
-      {
-       "choice": "Fi",
-       "description": "Decides and builds identity on personal values",
-       "label": "Introverted Feeling",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Di": "S",
-         "Sleep": [
-          "S",
-          "S1"
-         ],
-         "Consume": [
-          "S",
-          "S1"
-         ],
-         "Te": "D",
-         "SF": "S",
-         "NF": "S"
-        },
-        "D": {
-         "Te": "S",
-         "SF": "D",
-         "NF": "D"
-        }
-       }
-      },
-      {
-       "choice": "Te",
-       "description": "Decides based on tribe's spectrum of social reasons",
-       "label": "Extroverted Thinking",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "De": "S",
-         "Blast": [
-          "S",
-          "S1"
-         ],
-         "Play": [
-          "S",
-          "S1"
-         ],
-         "Fi": "D",
-         "ST": "S",
-         "NT": "S"
-        },
-        "D": {
-         "Fi": "S",
-         "ST": "D",
-         "NT": "D"
-        }
+    [
+     {
+      "choice": "Oi",
+      "description": "Controlling, is not open to new info",
+      "label": "Introverted Observer",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "ExxJ": "S",
+        "IxxP": "S",
+        "IxxJ": "S",
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "B+S": "S",
+        "P+B": "S",
+        "Ni": "S",
+        "Si": "S",
+        "Ne": "D",
+        "Se": "D"
        }
       }
-     ],
-     [
-      {
-       "choice": "Fe",
-       "description": "Decides based on tribe's spectrum of social values",
-       "label": "Extroverted Feeling",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "De": "S",
-         "Blast": [
-          "S",
-          "S1"
-         ],
-         "Play": [
-          "S",
-          "S1"
-         ],
-         "Ti": "D",
-         "SF": "S",
-         "NF": "S"
-        },
-        "D": {
-         "Ti": "S",
-         "SF": "D",
-         "NF": "D"
-        }
-       }
-      },
-      {
-       "choice": "Ti",
-       "description": "Decides and builds identity on personal reasons",
-       "label": "Introverted Thinking",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Di": "S",
-         "Sleep": [
-          "S",
-          "S1"
-         ],
-         "Consume": [
-          "S",
-          "S1"
-         ],
-         "Fe": "D",
-         "ST": "S",
-         "NT": "S"
-        },
-        "D": {
-         "Fe": "S",
-         "ST": "D",
-         "NT": "D"
-        }
+     },
+     {
+      "choice": "Oe",
+      "description": "Chaotic, takes more info than they organize",
+      "label": "Extroverted Observer",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "ExxJ": "S",
+        "IxxP": "S",
+        "ExxP": "S",
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "C+P": "S",
+        "P+B": "S",
+        "Ne": "S",
+        "Se": "S",
+        "Ni": "D",
+        "Si": "D"
        }
       }
-     ],
-     [
-      {
-       "choice": "Si",
-       "description": "Organizes known details, realities, and facts",
-       "label": "Introverted Sensing",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Oi": "S",
-         "Sleep": [
-          "S",
-          "S1"
-         ],
-         "Blast": [
-          "S",
-          "S1"
-         ],
-         "Ne": "D",
-         "ST": "S",
-         "SF": "S"
-        },
-        "D": {
-         "Ne": "S",
-         "ST": "D",
-         "SF": "D"
-        }
-       }
-      },
-      {
-       "choice": "Ne",
-       "description": "Gathers abstract connections across the spectrum",
-       "label": "Extroverted Intuition",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Oe": "S",
-         "Consume": [
-          "S",
-          "S1"
-         ],
-         "Play": [
-          "S",
-          "S1"
-         ],
-         "Si": "D",
-         "NT": "S",
-         "NF": "S"
-        },
-        "D": {
-         "Si": "S",
-         "NT": "D",
-         "NF": "D"
-        }
-       }
-      }
-     ],
-     [
-      {
-       "choice": "Se",
-       "description": "Gathers details, realities, and facts across the spectrum",
-       "label": "Extroverted Sensing",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Oe": "S",
-         "Consume": [
-          "S",
-          "S1"
-         ],
-         "Play": [
-          "S",
-          "S1"
-         ],
-         "Ni": "D",
-         "ST": "S",
-         "SF": "S"
-        },
-        "D": {
-         "Ni": "S",
-         "ST": "D",
-         "SF": "D"
-        }
-       }
-      },
-      {
-       "choice": "Ni",
-       "description": "Organizes known abstract connections",
-       "label": "Introverted Intuition",
-       "states": [
-        "S",
-        "D"
-       ],
-       "crossReferences": {
-        "S": {
-         "Oi": "S",
-         "Blast": [
-          "S",
-          "S1"
-         ],
-         "Sleep": [
-          "S",
-          "S1"
-         ],
-         "Se": "D",
-         "NT": "S",
-         "NF": "S"
-        },
-        "D": {
-         "Se": "S",
-         "NT": "D",
-         "NF": "D"
-        }
-       }
-      }
-     ]
+     }
     ],
-    "group": "Functions"
-   },
-   {
-    "choicePairs": [
-     [
-      {
-       "choice": "De-F",
-       "description": "Soft with the tribe, careful with words",
-       "label": "Feminine Extroverted Decider",
-       "states": [
-        "S"
-       ]
-      },
-      {
-       "choice": "De-M",
-       "description": "Shoves on the tribe, says it how it is",
-       "label": "Masculine Extroverted Decider",
-       "states": [
-        "S"
-       ]
+    [],
+    [
+     {
+      "choice": "IxxJ",
+      "description": "Over organizes known info, slow to gather new info",
+      "label": "IxxJ",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "O": "S",
+        "DD": "S",
+        "Oi": "S",
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "B+S": "S",
+        "P+B": "S",
+        "Ni": "S",
+        "Si": "S",
+        "Ne": "D",
+        "Se": "D"
+       }
       }
-     ],
-     [],
-     [
-      {
-       "choice": "Sensing-F",
-       "description": "Sight, written, picture, open, tastes, tries",
-       "label": "Feminine Sensing",
-       "states": [
-        "S"
-       ]
-      },
-      {
-       "choice": "Sensing-M",
-       "description": "Words, sounds, rhythm, weight, movement, texture",
-       "label": "Masculine Sensing",
-       "states": [
-        "S"
-       ]
+     },
+     {
+      "choice": "ExxP",
+      "description": "Over gathers new info, slow to organize known info",
+      "label": "ExxP",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "O": "S",
+        "DD": "S",
+        "Oe": "S",
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "C+P": "S",
+        "P+B": "S",
+        "Ne": "S",
+        "Se": "S",
+        "Ni": "D",
+        "Si": "D"
+       }
       }
-     ]
+     }
     ],
-    "group": "Sexual/Modalities"
-   }
-  ]
- },
+    [
+     {
+      "choice": "IxxP",
+      "description": "Builds up self so the tribe can be inspired",
+      "label": "IxxP",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "D": "S",
+        "OO": "S",
+        "Di": "S",
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "S+C": "S",
+        "C+P": "S",
+        "B+S": "S",
+        "Ti": "S",
+        "Fi": "S",
+        "Te": "D",
+        "Fe": "D"
+       }
+      }
+     },
+     {
+      "choice": "ExxJ",
+      "description": "Builds up the tribe so the self can be inspired",
+      "label": "ExxJ",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "D": "S",
+        "OO": "S",
+        "De": "S",
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "C+P": "S",
+        "B+S": "S",
+        "P+B": "S",
+        "Te": "S",
+        "Fe": "S",
+        "Ti": "D",
+        "Fi": "D"
+       }
+      }
+     }
+    ]
+   ],
+   "group": "Needs"
+  },
+  {
+   "choicePairs": [
+    [
+     {
+      "choice": "S+C",
+      "description": "Deep inner world of taking in info and processing",
+      "label": "Sleep and Consume",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "Sleep": [
+         "S1",
+         "S2"
+        ],
+        "Consume": [
+         "S1",
+         "S2"
+        ]
+       }
+      }
+     },
+     {
+      "choice": "C+P",
+      "description": "Over gathers then wants to do something with it",
+      "label": "Consume and Play",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "Consume": [
+         "S1",
+         "S2"
+        ],
+        "Play": [
+         "S1",
+         "S2"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "choice": "B+S",
+      "description": "Reworks the same info and then shares knowledge",
+      "label": "Blast and Sleep",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "Blast": [
+         "S1",
+         "S2"
+        ],
+        "Sleep": [
+         "S1",
+         "S2"
+        ]
+       }
+      }
+     },
+     {
+      "choice": "P+B",
+      "description": "Expends energy and shares knowledge",
+      "label": "Play and Blast",
+      "states": [
+       "S"
+      ],
+      "crossReferences": {
+       "S": {
+        "Play": [
+         "S1",
+         "S2"
+        ],
+        "Blast": [
+         "S1",
+         "S2"
+        ]
+       }
+      }
+     }
+    ],
+    [],
+    [
+     {
+      "choice": "Sleep",
+      "description": "Preserving energy, processing, introspective",
+      "label": "Sleep",
+      "parenthetical": "Di+Oi",
+      "states": [
+       "S",
+       "S1",
+       "S2",
+       "3",
+       "4"
+      ],
+      "crossReferences": {
+       "S": {
+        "S+C": "S",
+        "B+S": "S"
+       },
+       "S1": {
+        "S+C": "S",
+        "B+S": "S",
+        "Di": "S",
+        "Oi": "S",
+        "Fi": "S",
+        "Ti": "S",
+        "Si": "S",
+        "Ni": "S"
+       },
+       "S2": {
+        "S+C": "S",
+        "B+S": "S"
+       },
+       "S3": {},
+       "S4": {}
+      }
+     },
+     {
+      "choice": "Play",
+      "description": "Expending energy, work, doing, show off",
+      "label": "Play",
+      "parenthetical": "De+Oe",
+      "states": [
+       "S",
+       "S1",
+       "S2",
+       "3",
+       "4"
+      ],
+      "crossReferences": {
+       "S": {
+        "C+P": "S",
+        "P+B": "S"
+       },
+       "S1": {
+        "C+P": "S",
+        "P+B": "S",
+        "De": "S",
+        "Oe": "S",
+        "Fe": "S",
+        "Te": "S",
+        "Se": "S",
+        "Ne": "S"
+       },
+       "S2": {
+        "C+P": "S",
+        "P+B": "S"
+       },
+       "S3": {},
+       "S4": {}
+      }
+     }
+    ],
+    [
+     {
+      "choice": "Consume",
+      "description": "Learning, taking in & respecting info for self",
+      "label": "Consume",
+      "parenthetical": "Di+Oe",
+      "states": [
+       "S",
+       "S1",
+       "S2",
+       "3",
+       "4"
+      ],
+      "crossReferences": {
+       "S": {
+        "S+C": "S",
+        "C+P": "S"
+       },
+       "S1": {
+        "S+C": "S",
+        "C+P": "S",
+        "Di": "S",
+        "Oe": "S",
+        "Fi": "S",
+        "Ti": "S",
+        "Se": "S",
+        "Ne": "S"
+       },
+       "S2": {
+        "S+C": "S",
+        "C+P": "S"
+       },
+       "S3": {},
+       "S4": {}
+      }
+     },
+     {
+      "choice": "Blast",
+      "description": "Teaching, controlling, get started, bragging",
+      "label": "Blast",
+      "parenthetical": "De+Oi",
+      "states": [
+       "S",
+       "S1",
+       "S2",
+       "3",
+       "4"
+      ],
+      "crossReferences": {
+       "S": {
+        "B+S": "S",
+        "P+B": "S"
+       },
+       "S1": {
+        "B+S": "S",
+        "P+B": "S",
+        "De": "S",
+        "Oi": "S",
+        "Fe": "S",
+        "Te": "S",
+        "Si": "S",
+        "Ni": "S"
+       },
+       "S2": {
+        "B+S": "S",
+        "P+B": "S"
+       },
+       "S3": {},
+       "S4": {}
+      }
+     }
+    ]
+   ],
+   "group": "Animals"
+  },
+  {
+   "choicePairs": [
+    [
+     {
+      "choice": "SF",
+      "description": "Valuing something in the physical world",
+      "label": "SF",
+      "parenthetical": "Popularity",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Fe": "S",
+        "Fi": "S",
+        "Se": "S",
+        "Si": "S",
+        "NT": "D"
+       },
+       "D": {
+        "Te": "S",
+        "Ti": "S",
+        "Ne": "S",
+        "Ni": "S",
+        "NT": "S"
+       }
+      }
+     },
+     {
+      "choice": "NT",
+      "description": "Reasons in the abstract world",
+      "label": "NT",
+      "parenthetical": "Nerdy",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Te": "S",
+        "Ti": "S",
+        "Ne": "S",
+        "Ni": "S",
+        "SF": "D"
+       },
+       "D": {
+        "Fe": "S",
+        "Fi": "S",
+        "Se": "S",
+        "Si": "S",
+        "SF": "S"
+       }
+      }
+     }
+    ],
+    [
+     {
+      "choice": "ST",
+      "description": "Reasons in the physical world",
+      "label": "ST",
+      "parenthetical": "Reporter",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Te": "S",
+        "Ti": "S",
+        "Se": "S",
+        "Si": "S",
+        "NF": "D"
+       },
+       "D": {
+        "Fe": "S",
+        "Fi": "S",
+        "Ne": "S",
+        "Ni": "S",
+        "NF": "S"
+       }
+      }
+     },
+     {
+      "choice": "NF",
+      "description": "Valuing something in the abstract world",
+      "label": "NF",
+      "parenthetical": "Hippie",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Fe": "S",
+        "Fi": "S",
+        "Ne": "S",
+        "Ni": "S",
+        "ST": "D"
+       },
+       "D": {
+        "Te": "S",
+        "Ti": "S",
+        "Se": "S",
+        "Si": "S",
+        "ST": "S"
+       }
+      }
+     }
+    ]
+   ],
+   "group": "Letters"
+  },
+  {
+   "choicePairs": [
+    [
+     {
+      "choice": "Fi",
+      "description": "Decides and builds identity on personal values",
+      "label": "Introverted Feeling",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Di": "S",
+        "Sleep": [
+         "S",
+         "S1"
+        ],
+        "Consume": [
+         "S",
+         "S1"
+        ],
+        "Te": "D",
+        "SF": "S",
+        "NF": "S"
+       },
+       "D": {
+        "Te": "S",
+        "SF": "D",
+        "NF": "D"
+       }
+      }
+     },
+     {
+      "choice": "Te",
+      "description": "Decides based on tribe's spectrum of social reasons",
+      "label": "Extroverted Thinking",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "De": "S",
+        "Blast": [
+         "S",
+         "S1"
+        ],
+        "Play": [
+         "S",
+         "S1"
+        ],
+        "Fi": "D",
+        "ST": "S",
+        "NT": "S"
+       },
+       "D": {
+        "Fi": "S",
+        "ST": "D",
+        "NT": "D"
+       }
+      }
+     }
+    ],
+    [
+     {
+      "choice": "Fe",
+      "description": "Decides based on tribe's spectrum of social values",
+      "label": "Extroverted Feeling",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "De": "S",
+        "Blast": [
+         "S",
+         "S1"
+        ],
+        "Play": [
+         "S",
+         "S1"
+        ],
+        "Ti": "D",
+        "SF": "S",
+        "NF": "S"
+       },
+       "D": {
+        "Ti": "S",
+        "SF": "D",
+        "NF": "D"
+       }
+      }
+     },
+     {
+      "choice": "Ti",
+      "description": "Decides and builds identity on personal reasons",
+      "label": "Introverted Thinking",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Di": "S",
+        "Sleep": [
+         "S",
+         "S1"
+        ],
+        "Consume": [
+         "S",
+         "S1"
+        ],
+        "Fe": "D",
+        "ST": "S",
+        "NT": "S"
+       },
+       "D": {
+        "Fe": "S",
+        "ST": "D",
+        "NT": "D"
+       }
+      }
+     }
+    ],
+    [
+     {
+      "choice": "Si",
+      "description": "Organizes known details, realities, and facts",
+      "label": "Introverted Sensing",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Oi": "S",
+        "Sleep": [
+         "S",
+         "S1"
+        ],
+        "Blast": [
+         "S",
+         "S1"
+        ],
+        "Ne": "D",
+        "ST": "S",
+        "SF": "S"
+       },
+       "D": {
+        "Ne": "S",
+        "ST": "D",
+        "SF": "D"
+       }
+      }
+     },
+     {
+      "choice": "Ne",
+      "description": "Gathers abstract connections across the spectrum",
+      "label": "Extroverted Intuition",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Oe": "S",
+        "Consume": [
+         "S",
+         "S1"
+        ],
+        "Play": [
+         "S",
+         "S1"
+        ],
+        "Si": "D",
+        "NT": "S",
+        "NF": "S"
+       },
+       "D": {
+        "Si": "S",
+        "NT": "D",
+        "NF": "D"
+       }
+      }
+     }
+    ],
+    [
+     {
+      "choice": "Se",
+      "description": "Gathers details, realities, and facts across the spectrum",
+      "label": "Extroverted Sensing",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Oe": "S",
+        "Consume": [
+         "S",
+         "S1"
+        ],
+        "Play": [
+         "S",
+         "S1"
+        ],
+        "Ni": "D",
+        "ST": "S",
+        "SF": "S"
+       },
+       "D": {
+        "Ni": "S",
+        "ST": "D",
+        "SF": "D"
+       }
+      }
+     },
+     {
+      "choice": "Ni",
+      "description": "Organizes known abstract connections",
+      "label": "Introverted Intuition",
+      "states": [
+       "S",
+       "D"
+      ],
+      "crossReferences": {
+       "S": {
+        "Oi": "S",
+        "Blast": [
+         "S",
+         "S1"
+        ],
+        "Sleep": [
+         "S",
+         "S1"
+        ],
+        "Se": "D",
+        "NT": "S",
+        "NF": "S"
+       },
+       "D": {
+        "Se": "S",
+        "NT": "D",
+        "NF": "D"
+       }
+      }
+     }
+    ]
+   ],
+   "group": "Functions"
+  },
+  {
+   "choicePairs": [
+    [
+     {
+      "choice": "De-F",
+      "description": "Soft with the tribe, careful with words",
+      "label": "Feminine Extroverted Decider",
+      "states": [
+       "S"
+      ]
+     },
+     {
+      "choice": "De-M",
+      "description": "Shoves on the tribe, says it how it is",
+      "label": "Masculine Extroverted Decider",
+      "states": [
+       "S"
+      ]
+     }
+    ],
+    [],
+    [
+     {
+      "choice": "Sensing-F",
+      "description": "Sight, written, picture, open, tastes, tries",
+      "label": "Feminine Sensing",
+      "states": [
+       "S"
+      ]
+     },
+     {
+      "choice": "Sensing-M",
+      "description": "Words, sounds, rhythm, weight, movement, texture",
+      "label": "Masculine Sensing",
+      "states": [
+       "S"
+      ]
+     }
+    ]
+   ],
+   "group": "Sexual/Modalities"
+  }
+ ],
  "types": [
   {
    "type": "Fi/Ni SC/B MM",

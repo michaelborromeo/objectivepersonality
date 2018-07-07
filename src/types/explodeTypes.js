@@ -89,7 +89,7 @@ function explodeTypes() {
   }
 
   const output = {
-    choiceGroups,
+    choiceGroups: choiceGroups.choiceGroups,
     types: newTypes
   };
 
