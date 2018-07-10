@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default function getStackSummary(type) {
   const savior1 = type[0] + type[1];
   const savior2 = type[3] + type[4];
@@ -125,17 +127,21 @@ function getActivations(func, animal1, animal2, animal3) {
   };
 
   let activations = 0;
+  const activatedAnimals = [];
   if (activationMap[animal1].includes(func)) {
     activations++;
+    activatedAnimals.push(animal1);
   }
   if (activationMap[animal2].includes(func)) {
     activations++;
+    activatedAnimals.push(animal2);
   }
   if (activationMap[animal3].includes(func)) {
     activations++;
+    activatedAnimals.push(animal3);
   }
 
-  return activations;
+  return `${activations} (${_.join(activatedAnimals, ', ')})`;
 }
 
 function isAnimalJumper(animal1, animal4) {
