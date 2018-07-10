@@ -96,10 +96,6 @@ function getDerivedChoices(choice, state) {
     case 'D':
     case 'DD':
     case 'OO':
-    case 'Di':
-    case 'De':
-    case 'Oi':
-    case 'Oe':
     case 'IxxJ':
     case 'ExxP':
     case 'IxxP':
@@ -202,6 +198,10 @@ function getDerivedChoices(choice, state) {
         return [];
       }
 
+    case 'Di':
+    case 'De':
+    case 'Oi':
+    case 'Oe':
     case 'SF':
     case 'NT':
     case 'ST':

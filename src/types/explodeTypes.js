@@ -133,14 +133,22 @@ function getChargedNeeds(type) {
   const letter2 = type[3];
   const ei2 = type[4];
 
-  if (letter1 === 'N' || letter1 === 'S') {
-    if (ei1 === 'i') {
+  const chargedNeeds = [];
+  chargedNeeds.push(getChargedNeed(letter1, ei1) + '-Savior');
+  chargedNeeds.push(getChargedNeed(letter2, ei2) + '-Savior');
+
+  return chargedNeeds;
+}
+
+function getChargedNeed(letter, ei) {
+  if (letter === 'N' || letter === 'S') {
+    if (ei === 'i') {
       return 'Oi';
     } else {
       return 'Oe';
     }
   } else {
-    if (ei1 === 'i') {
+    if (ei === 'i') {
       return 'Di';
     } else {
       return 'De';
