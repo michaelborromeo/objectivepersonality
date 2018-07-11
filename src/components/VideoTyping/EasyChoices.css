@@ -1,0 +1,22 @@
+.EasyChoices {
+}
+
+.easychoice-grid {
+}
+
+.easychoice-choice {
+    display: inline-grid;
+    width: 140px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.easychoice-choice:hover {
+    background-color: #ddd;
+}
+
+.easychoice-description {
+    font-size: 0.7em;
+    font-weight: normal;
+}
