@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import {Route} from 'react-router-dom';
+
 import Header from './Header';
-import Choices from './Choices';
-import Types from './Types';
-import Summary from './Summary';
+import TypeSheet from './TypeSheet';
+import VideoTyping from './VideoTyping';
 import './App.css';
 
 class App extends Component {
@@ -10,9 +11,8 @@ class App extends Component {
     return (
       <div className="App container-fluid">
         <Header/>
-        <Summary/>
-        <Choices/>
-        <Types/>
+        <Route exact path="/" component={TypeSheet}/>
+        <Route path="/video" component={VideoTyping}/>
       </div>
     );
   }

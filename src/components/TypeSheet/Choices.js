@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import ChoiceGroup from './ChoiceGroup';
-import {setChoiceState} from '../store/actions';
+import {setChoiceState} from '../../store/actions';
 import './Choices.css';
 
 class Choices extends Component {

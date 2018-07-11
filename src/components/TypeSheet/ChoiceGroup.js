@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
-import {getCrossReferencesForChoice} from '../types/crossReferences';
+import {getCrossReferencesForChoice} from '../../types/crossReferences';
 import './ChoiceGroup.css';
 
 import 'react-select/dist/react-select.css';

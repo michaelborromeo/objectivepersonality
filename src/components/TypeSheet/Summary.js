@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './Summary.css';
-import getStackSummary from '../types/getStackSummary';
+import getStackSummary from '../../types/getStackSummary';
 
 class Summary extends Component {
   render() {
