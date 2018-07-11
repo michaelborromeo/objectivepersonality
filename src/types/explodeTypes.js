@@ -3,48 +3,8 @@ const path = require('path');
 
 const types = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/input/OpTypes.json')));
 const choiceGroups = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/input/OpChoices.json')));
-
-const animalTransforms = {
-  'Fi/Ni': ['SCB', 'SCP', 'SBC', 'SBP'],
-  'Fi/Si': ['SCB', 'SCP', 'SBC', 'SBP'],
-  'Ni/Fi': ['SCB', 'SCP', 'SBC', 'SBP'],
-  'Ni/Ti': ['SCB', 'SCP', 'SBC', 'SBP'],
-  'Si/Fi': ['SCB', 'SCP', 'SBC', 'SBP'],
-  'Si/Ti': ['SCB', 'SCP', 'SBC', 'SBP'],
-  'Ti/Ni': ['SCB', 'SCP', 'SBC', 'SBP'],
-  'Ti/Si': ['SCB', 'SCP', 'SBC', 'SBP'],
-  'Fi/Ne': ['CSB', 'CSP', 'CPS', 'CPB'],
-  'Fi/Se': ['CSB', 'CSP', 'CPS', 'CPB'],
-  'Ti/Ne': ['CSB', 'CSP', 'CPS', 'CPB'],
-  'Ti/Se': ['CSB', 'CSP', 'CPS', 'CPB'],
-  'Ne/Fi': ['CSB', 'CSP', 'CPS', 'CPB'],
-  'Ne/Ti': ['CSB', 'CSP', 'CPS', 'CPB'],
-  'Se/Fi': ['CSB', 'CSP', 'CPS', 'CPB'],
-  'Se/Ti': ['CSB', 'CSP', 'CPS', 'CPB'],
-  'Ni/Fe': ['BSC', 'BSP', 'BPS', 'BPC'],
-  'Ni/Te': ['BSC', 'BSP', 'BPS', 'BPC'],
-  'Si/Fe': ['BSC', 'BSP', 'BPS', 'BPC'],
-  'Si/Te': ['BSC', 'BSP', 'BPS', 'BPC'],
-  'Fe/Ni': ['BSC', 'BSP', 'BPS', 'BPC'],
-  'Fe/Si': ['BSC', 'BSP', 'BPS', 'BPC'],
-  'Te/Ni': ['BSC', 'BSP', 'BPS', 'BPC'],
-  'Te/Si': ['BSC', 'BSP', 'BPS', 'BPC'],
-  'Fe/Ne': ['PCS', 'PCB', 'PBS', 'PBC'],
-  'Fe/Se': ['PCS', 'PCB', 'PBS', 'PBC'],
-  'Ne/Fe': ['PCS', 'PCB', 'PBS', 'PBC'],
-  'Ne/Te': ['PCS', 'PCB', 'PBS', 'PBC'],
-  'Se/Fe': ['PCS', 'PCB', 'PBS', 'PBC'],
-  'Se/Te': ['PCS', 'PCB', 'PBS', 'PBC'],
-  'Te/Ne': ['PCS', 'PCB', 'PBS', 'PBC'],
-  'Te/Se': ['PCS', 'PCB', 'PBS', 'PBC']
-};
-
-const sexualEnergies = [
-  {energy: 'MM', choices: ['Sensing-M', 'De-M']},
-  {energy: 'FM', choices: ['Sensing-F', 'De-M']},
-  {energy: 'MF', choices: ['Sensing-M', 'De-F']},
-  {energy: 'FF', choices: ['Sensing-F', 'De-F']}
-];
+const animalTransforms = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/input/OpTypeAnimals.json')));
+const sexualEnergies = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/input/OpSexualModalities.json')));
 
 explodeTypes();
 
@@ -103,9 +63,6 @@ function formatAnimal(animal) {
 
 function getLeadNeeds(type) {
   const letter1 = type[0];
-  const ei1 = type[1];
-  const letter2 = type[3];
-  const ei2 = type[4];
 
   if (letter1 === 'N' || letter1 === 'S') {
     return 'O';
@@ -116,9 +73,6 @@ function getLeadNeeds(type) {
 
 function getMiddleNeeds(type) {
   const letter1 = type[0];
-  const ei1 = type[1];
-  const letter2 = type[3];
-  const ei2 = type[4];
 
   if (letter1 === 'N' || letter1 === 'S') {
     return 'DD';
@@ -185,8 +139,6 @@ function getLetters(type) {
 function getTemperament(type) {
   const letter1 = type[0];
   const ei1 = type[1];
-  const letter2 = type[3];
-  const ei2 = type[4];
 
   if (letter1 === 'N' || letter1 === 'S') {
     if (ei1 === 'i') {

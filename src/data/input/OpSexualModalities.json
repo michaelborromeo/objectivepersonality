@@ -1,0 +1,30 @@
+[
+  {
+    "energy": "MM",
+    "choices": [
+      "Sensing-M",
+      "De-M"
+    ]
+  },
+  {
+    "energy": "FM",
+    "choices": [
+      "Sensing-F",
+      "De-M"
+    ]
+  },
+  {
+    "energy": "MF",
+    "choices": [
+      "Sensing-M",
+      "De-F"
+    ]
+  },
+  {
+    "energy": "FF",
+    "choices": [
+      "Sensing-F",
+      "De-F"
+    ]
+  }
+]
