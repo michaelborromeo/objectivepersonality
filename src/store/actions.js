@@ -13,3 +13,62 @@ export function reset() {
     type: 'RESET'
   };
 }
+
+export function addVideo(videoId) {
+  return {
+    type: 'ADD_VIDEO',
+    payload: {
+      videoId
+    }
+  };
+}
+
+export function selectVideo(videoId) {
+  return {
+    type: 'SELECT_VIDEO',
+    payload: {
+      videoId
+    }
+  };
+}
+
+export function deleteVideo(videoId) {
+  return {
+    type: 'DELETE_VIDEO',
+    payload: {
+      videoId
+    }
+  };
+}
+
+export function addNote(videoId, videoSeconds, choice) {
+  return {
+    type: 'ADD_NOTE',
+    payload: {
+      videoId,
+      videoSeconds,
+      choice,
+      state
+    }
+  };
+}
+
+export function updateAddNote(noteId, note, state) {
+  return {
+    type: 'UPDATE_NOTE',
+    payload: {
+      noteId,
+      note,
+      state
+    }
+  };
+}
+
+export function deleteNote(noteId) {
+  return {
+    type: 'DELETE_NOTE',
+    payload: {
+      noteId
+    }
+  };
+}

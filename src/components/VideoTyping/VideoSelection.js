@@ -9,7 +9,7 @@ class VideoSelection extends Component {
       <div className="VideoSelection">
         <div className="row">
           <div className="col-5 offset-3">
-            <input className="form-control" placeholder="Enter a YouTube URL or video ID..."/>
+            <input className="form-control" placeholder="Enter a YouTube URL or Video ID..."/>
           </div>
           <div className="col-1">
             <button className="btn btn-primary">Load Video</button>
