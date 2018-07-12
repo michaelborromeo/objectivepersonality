@@ -47,8 +47,7 @@ export function addNote(videoId, videoSeconds, choice) {
     payload: {
       videoId,
       videoSeconds,
-      choice,
-      state
+      choice
     }
   };
 }
@@ -69,6 +68,15 @@ export function deleteNote(noteId) {
     type: 'DELETE_NOTE',
     payload: {
       noteId
+    }
+  };
+}
+
+export function loadPlayer(player) {
+  return {
+    type: 'LOAD_PLAYER',
+    payload: {
+      player
     }
   };
 }
