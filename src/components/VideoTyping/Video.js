@@ -15,7 +15,7 @@ class Video extends Component {
 
     return (
       <YouTube
-        videoId=""
+        videoId="2g811Eo7K8U"
         opts={opts}
         onReady={this._onReady}
       />
@@ -24,6 +24,7 @@ class Video extends Component {
 
   _onReady(event) {
     // access to player in all event handlers via event.target
+    console.log(event.target.getVideoData().title);
     //event.target.pauseVideo();
   }
 }

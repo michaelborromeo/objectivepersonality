@@ -41,11 +41,12 @@ export function deleteVideo(videoId) {
   };
 }
 
-export function addNote(videoId, videoSeconds, choice) {
+export function addNote(videoId, noteId, videoSeconds, choice) {
   return {
     type: 'ADD_NOTE',
     payload: {
       videoId,
+      noteId,
       videoSeconds,
       choice
     }
@@ -63,19 +64,21 @@ export function updateAddNote(noteId, note, state) {
   };
 }
 
-export function deleteNote(noteId) {
+export function deleteNote(videoId, noteId) {
   return {
     type: 'DELETE_NOTE',
     payload: {
+      videoId,
       noteId
     }
   };
 }
 
-export function loadPlayer(player) {
+export function loadPlayer(videoId, player) {
   return {
     type: 'LOAD_PLAYER',
     payload: {
+      videoId,
       player
     }
   };
