@@ -1,34 +1,41 @@
 import _ from 'lodash';
 
 const initialState = {
-  selectedVideoId: '2g811Eo7K8U',
-  videoIds: ['2g811Eo7K8U'],
-  videos: {
-    '2g811Eo7K8U': {
-      id: '2g811Eo7K8U',
-      title: 'Some YT Video',
-      notes: [
-        {
-          id: '1234-1234-1234-1234',
-          createdAt: '2018-07-12',
-          seconds: 15,
-          choice: 'OO',
-          state: 'S',
-          note: 'This is a clear example of a double observer!!!'
-        },
-        {
-          id: '2345-2345-2345-2345',
-          createdAt: '2018-07-12',
-          seconds: 30,
-          choice: 'D',
-          state: 'S',
-          note: 'This is a clear example of a single decider!!!'
-        }
-      ]
-    }
-  },
+  selectedVideoId: '',
+  videoIds: [],
+  videos: {},
   player: null
 };
+
+//const initialState = {
+//  selectedVideoId: '2g811Eo7K8U',
+//  videoIds: ['2g811Eo7K8U'],
+//  videos: {
+//    '2g811Eo7K8U': {
+//      id: '2g811Eo7K8U',
+//      title: 'Some YT Video',
+//      notes: [
+//        {
+//          id: '1234-1234-1234-1234',
+//          createdAt: '2018-07-12',
+//          seconds: 15,
+//          choice: 'OO',
+//          state: 'S',
+//          note: 'This is a clear example of a double observer!!!'
+//        },
+//        {
+//          id: '2345-2345-2345-2345',
+//          createdAt: '2018-07-12',
+//          seconds: 30,
+//          choice: 'D',
+//          state: 'S',
+//          note: 'This is a clear example of a single decider!!!'
+//        }
+//      ]
+//    }
+//  },
+//  player: null
+//};
 
 export default (state = initialState, action) => {
   let videoId;
@@ -85,6 +92,24 @@ export default (state = initialState, action) => {
 
       // if the video doesn't exist then nothing changes
       return state;
+
+    case 'SET_VIDEO_TITLE':
+      videoId = action.payload.videoId;
+      videos = _.clone(state.videos);
+      const title = action.payload.title;
+
+      if (!state.videoIds.includes(videoId)) {
+        return state;
+      }
+
+      videos[videoId].title = title;
+
+      return {
+        selectedVideoId: state.selectedVideoId,
+        videoIds: state.videoIds,
+        videos,
+        player: state.player
+      };
 
     case 'DELETE_VIDEO':
       videoId = action.payload.videoId;
@@ -176,11 +201,17 @@ export default (state = initialState, action) => {
       };
 
     case 'LOAD_PLAYER':
+      const player = action.payload.player;
+
+      if (!state.videoIds.includes(videoId)) {
+        return state;
+      }
+
       return {
         selectedVideoId: state.selectedVideoId,
         videoIds: state.videoIds,
         videos: state.videos,
-        player: action.payload.player
+        player
       };
 
     default:

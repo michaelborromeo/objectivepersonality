@@ -32,6 +32,16 @@ export function selectVideo(videoId) {
   };
 }
 
+export function setVideoTitle(videoId, title) {
+  return {
+    type: 'SET_VIDEO_TITLE',
+    payload: {
+      videoId,
+      title
+    }
+  };
+}
+
 export function deleteVideo(videoId) {
   return {
     type: 'DELETE_VIDEO',
@@ -74,11 +84,10 @@ export function deleteNote(videoId, noteId) {
   };
 }
 
-export function loadPlayer(videoId, player) {
+export function loadPlayer(player) {
   return {
     type: 'LOAD_PLAYER',
     payload: {
-      videoId,
       player
     }
   };
