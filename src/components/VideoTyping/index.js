@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Video from './Video';
 import Notes from './Notes';
-import EasyChoices from './EasyChoices';
+import ChoiceSelector from './ChoiceSelector';
 import VideoSelection from './VideoSelection';
 import './index.css';
 
@@ -18,7 +18,7 @@ class VideoTyping extends Component {
             <Notes/>
           </div>
         </div>
-        <EasyChoices/>
+        <ChoiceSelector/>
       </div>
     );
   }

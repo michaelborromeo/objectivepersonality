@@ -51,11 +51,10 @@ export function deleteVideo(videoId) {
   };
 }
 
-export function addNote(videoId, noteId, videoSeconds, choice) {
+export function addNote(noteId, videoSeconds, choice) {
   return {
     type: 'ADD_NOTE',
     payload: {
-      videoId,
       noteId,
       videoSeconds,
       choice

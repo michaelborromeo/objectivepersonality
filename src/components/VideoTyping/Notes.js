@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import moment from 'moment';
+import _ from 'lodash';
 
 import './Notes.css';
-import {connect} from 'react-redux';
 
 class Notes extends Component {
   render() {
-
     const noteComponents = [];
 
     const videos = this.props.videos;
@@ -15,14 +16,21 @@ class Notes extends Component {
       return <div>No video selected.</div>;
     }
 
-    const notes = videos[videoId].notes;
+    const notes = _.orderBy(videos[videoId].notes, 'seconds', 'desc');
 
     for (let j = 0; j < notes.length; j++) {
       const note = notes[j];
 
       noteComponents.push(
-        <div key={j}>
-          {note.choice ? note.choice + ': ' : ''} {note.note}
+        <div key={j} className="notes-note">
+          <div className="notes-seconds">
+            {this.formatSeconds(note.seconds)}
+          </div>
+          <div className="notes-choice">
+            {note.choice ? note.choice + '' : ''}
+          </div>
+          <input className="form-control"/>
+          {note.note}
         </div>
       )
     }
@@ -35,6 +43,14 @@ class Notes extends Component {
         </div>
       </div>
     );
+  }
+
+  formatSeconds(seconds) {
+    if (seconds >= 3600) {
+      return moment(seconds, 's').format('h:mm:ss');
+    } else {
+      return moment(seconds, 's').format('mm:ss');
+    }
   }
 }
 

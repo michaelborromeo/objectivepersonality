@@ -135,19 +135,16 @@ export default (state = sampleState, action) => {
       return state;
 
     case 'ADD_NOTE':
-      videoId = action.payload.videoId;
+      videoId = state.selectedVideoId;
       noteId = action.payload.noteId;
+      videos = _.clone(state.videos);
       const seconds = action.payload.videoSeconds;
       const choice = action.payload.choice;
 
-      if (!state.videoIds.includes(videoId)) {
-        return state;
-      }
-
-      const video = state.videos[videoId];
+      const video = videos[videoId];
       video.notes.push({
         id: noteId,
-        createdAt: new Date(),
+        createdAt: _.now(),
         seconds,
         choice,
         state: '',
@@ -204,10 +201,6 @@ export default (state = sampleState, action) => {
 
     case 'LOAD_PLAYER':
       const player = action.payload.player;
-
-      if (!state.videoIds.includes(videoId)) {
-        return state;
-      }
 
       return {
         selectedVideoId: state.selectedVideoId,

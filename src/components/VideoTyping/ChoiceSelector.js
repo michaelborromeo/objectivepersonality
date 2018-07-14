@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-
-import './EasyChoices.css';
 import {connect} from 'react-redux';
+import uuid from 'uuid/v4';
 
-class EasyChoices extends Component {
+import {addNote} from '../../store/actions';
+import './ChoiceSelector.css';
+
+class ChoiceSelector extends Component {
   flatChoices = null;
 
   render() {
@@ -24,7 +26,7 @@ class EasyChoices extends Component {
     }
 
     return (
-      <div className="EasyChoices">
+      <div className="ChoiceSelector">
         <div className="easychoice-grid">
           {choiceComponents}
         </div>
@@ -61,21 +63,19 @@ class EasyChoices extends Component {
     return this.flatChoices;
   }
 
-  clickChoice(choice) {
-    return () => {
-      console.log('User clicked on ' + choice);
-      // handle user clicking on choice
-    };
+  clickChoice = (choice) => () => {
+    this.props.addNote(uuid(), this.props.player.getCurrentTime(), choice)
   }
-
 }
 
 const mapStateToProps = state => ({
-  choiceGroups: state.choicesAndTypes.choiceGroups
+  choiceGroups: state.choicesAndTypes.choiceGroups,
+  enabled: !!state.videoTyping.selectedVideoId,
+  player: state.videoTyping.player
 });
 
 const mapDispatchToProps = dispatch => ({
-  //setChoiceState: (choice, state) => dispatch(setChoiceState(choice, state))
+  addNote: (noteId, videoSeconds, choice) => dispatch(addNote(noteId, videoSeconds, choice))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EasyChoices);
+export default connect(mapStateToProps, mapDispatchToProps)(ChoiceSelector);

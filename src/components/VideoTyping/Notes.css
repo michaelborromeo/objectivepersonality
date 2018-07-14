@@ -1,0 +1,19 @@
+.Notes {
+    height: 360px;
+    overflow-y: scroll;
+}
+
+.notes-note {
+
+}
+
+.notes-seconds {
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.notes-choice {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 7px;
+}

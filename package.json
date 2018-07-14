@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "connected-react-router": "^4.3.0",
+    "history": "latest",
     "lodash": "^4.17.10",
+    "moment": "^2.22.2",
     "path": "^0.12.7",
     "query-string": "^6.1.0",
     "react": "^16.4.1",
@@ -15,8 +17,7 @@
     "react-virtualized-select": "^3.1.3",
     "react-youtube": "^7.6.0",
     "redux": "^4.0.0",
-    "uuid": "^3.3.2",
-    "history": "latest"
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
