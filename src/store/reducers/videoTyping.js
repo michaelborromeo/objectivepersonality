@@ -1,4 +1,6 @@
 import _ from 'lodash';
+//import qs from 'query-string';
+//import {LOCATION_CHANGE} from 'connected-react-router';
 
 const initialState = {
   selectedVideoId: '',
@@ -7,37 +9,37 @@ const initialState = {
   player: null
 };
 
-//const initialState = {
-//  selectedVideoId: '2g811Eo7K8U',
-//  videoIds: ['2g811Eo7K8U'],
-//  videos: {
-//    '2g811Eo7K8U': {
-//      id: '2g811Eo7K8U',
-//      title: 'Some YT Video',
-//      notes: [
-//        {
-//          id: '1234-1234-1234-1234',
-//          createdAt: '2018-07-12',
-//          seconds: 15,
-//          choice: 'OO',
-//          state: 'S',
-//          note: 'This is a clear example of a double observer!!!'
-//        },
-//        {
-//          id: '2345-2345-2345-2345',
-//          createdAt: '2018-07-12',
-//          seconds: 30,
-//          choice: 'D',
-//          state: 'S',
-//          note: 'This is a clear example of a single decider!!!'
-//        }
-//      ]
-//    }
-//  },
-//  player: null
-//};
+const sampleState = {
+  selectedVideoId: '2g811Eo7K8U',
+  videoIds: ['2g811Eo7K8U'],
+  videos: {
+    '2g811Eo7K8U': {
+      id: '2g811Eo7K8U',
+      title: 'Some YT Video',
+      notes: [
+        {
+          id: '1234-1234-1234-1234',
+          createdAt: '2018-07-12',
+          seconds: 15,
+          choice: 'OO',
+          state: 'S',
+          note: 'This is a clear example of a double observer!!!'
+        },
+        {
+          id: '2345-2345-2345-2345',
+          createdAt: '2018-07-12',
+          seconds: 30,
+          choice: 'D',
+          state: 'S',
+          note: 'This is a clear example of a single decider!!!'
+        }
+      ]
+    }
+  },
+  player: null
+};
 
-export default (state = initialState, action) => {
+export default (state = sampleState, action) => {
   let videoId;
   let noteId;
   let selectedVideoId;
@@ -63,9 +65,9 @@ export default (state = initialState, action) => {
       videos = state.videos;
       videoIds = state.videoIds;
 
-      videoIds.push(selectedVideoId);
-      videos[selectedVideoId] = {
-        id: '2g811Eo7K8U',
+      videoIds.push(videoId);
+      videos[videoId] = {
+        id: videoId,
         // get the title from the LOAD_PLAYER action
         title: '',
         notes: []

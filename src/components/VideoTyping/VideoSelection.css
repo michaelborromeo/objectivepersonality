@@ -1,0 +1,22 @@
+.videoselection-video-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.videoselection-video-list-item {
+    display: inline-block;
+    padding: 10px;
+}
+
+.videoselection-video-list-item-remove {
+    font-size: 0.6em;
+    padding-left: 5px;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.videoselection-instructions {
+    padding: 10px;
+    font-size: 1.6em;
+}

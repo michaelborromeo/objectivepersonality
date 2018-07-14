@@ -13,7 +13,7 @@ class Video extends Component {
     const opts = {
       width: '100%',
       playerVars: {
-        autoplay: 1
+        autoplay: 0
       }
     };
 
@@ -33,7 +33,8 @@ class Video extends Component {
 
   onStateChange = event => {
     const title = event.target.getVideoData().title;
-    const hasTitle = !!this.props.videos[this.props.selectedVideoId].title;
+    const hasTitle = this.props.videos[this.props.selectedVideoId] &&
+      !!this.props.videos[this.props.selectedVideoId].title;
 
     // set the title only if it hasn't already been set
     // doing this here because the title might not be present when onReady fires

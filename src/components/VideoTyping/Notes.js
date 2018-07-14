@@ -21,7 +21,7 @@ class Notes extends Component {
       const note = notes[j];
 
       noteComponents.push(
-        <div>
+        <div key={j}>
           {note.choice ? note.choice + ': ' : ''} {note.note}
         </div>
       )

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import getYouTubeId from '../../utils/getYouTubeId';
-import {addVideo} from '../../store/actions';
+import {addVideo, deleteVideo, selectVideo} from '../../store/actions';
 import './VideoSelection.css';
 
 class VideoSelection extends Component {
@@ -13,18 +13,34 @@ class VideoSelection extends Component {
 
   render() {
 
+    const selectedVideoId = this.props.selectedVideoId;
     const videos = this.props.videos;
     const videoIds = this.props.videoIds;
     const videoListComponents = [];
 
-    for (let i = 0; i < videoIds.length; i++) {
-      const video = videos[videoIds[i]];
-console.log(video.title)
+    if (videoIds.length) {
+      for (let i = 0; i < videoIds.length; i++) {
+        const video = videos[videoIds[i]];
+
+        videoListComponents.push(
+          <div className="videoselection-video-list-item" key={i}>
+            <button onClick={() => this.handleSelectVideo(video.id)}
+              className={`btn btn-link ${selectedVideoId === video.id ? 'bold' : ''}`}>
+              {video.title || '...'}
+            </button>
+            <button onClick={() => this.handleDeleteVideo(video.id)}
+              className="videoselection-video-list-item-remove btn btn-link">
+              Remove
+            </button>
+          </div>
+        );
+      }
+    } else {
       videoListComponents.push(
-        <div className="videoselection-video-list-item">
-          {video.title || '...'}
+        <div className="videoselection-instructions" key={'0'}>
+          Enter a YouTube URL or ID into the text box above to begin adding notes to a video.
         </div>
-      );
+      )
     }
 
     return (
@@ -42,12 +58,20 @@ console.log(video.title)
             </button>
           </div>
         </div>
-        <div className="row">
+        <div className="videoselection-video-list">
           {videoListComponents}
         </div>
       </div>
     );
   }
+
+  handleSelectVideo = videoId => {
+    this.props.selectVideo(videoId);
+  };
+
+  handleDeleteVideo = videoId => {
+    this.props.deleteVideo(videoId);
+  };
 
   handleVideoChange = event => {
     this.setState({videoUrlOrId: event.target.value})
@@ -55,6 +79,7 @@ console.log(video.title)
 
   handleLoadVideoClick = () => {
     this.props.addVideo(getYouTubeId(this.state.videoUrlOrId));
+    this.setState({videoUrlOrId: ''});
   };
 }
 
@@ -65,7 +90,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addVideo: (choice, state) => dispatch(addVideo(choice, state))
+  addVideo: (choice, state) => dispatch(addVideo(choice, state)),
+  selectVideo: (choice, state) => dispatch(selectVideo(choice, state)),
+  deleteVideo: (choice, state) => dispatch(deleteVideo(choice, state))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoSelection);
