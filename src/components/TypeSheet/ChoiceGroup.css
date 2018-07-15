@@ -43,3 +43,7 @@
 .choice-group-cross-reference {
     color: #0062ff;
 }
+
+.choice-group-cross-reference + .choice-group-cross-reference {
+    margin-left: 5px;
+}

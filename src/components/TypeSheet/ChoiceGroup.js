@@ -34,7 +34,7 @@ class ChoiceGroup extends Component {
             <div className="choice-group-description-left col-4 align-self-center">
               {choicePair[0].description} {this.renderParenthetical(choicePair[0].parenthetical)}
               <div className="choice-group-cross-references">
-                {this.formatCrossReferences(choicePair[0].choice)}
+                {this.renderCrossReferences(choicePair[0].choice)}
               </div>
             </div>
             <div className="choice-group-choice col-1 align-self-center">{choicePair[0].choice}</div>
@@ -50,7 +50,7 @@ class ChoiceGroup extends Component {
             <div className="choice-group-description-right col-4 align-self-center">
               {this.renderParenthetical(choicePair[1].parenthetical)} {choicePair[1].description}
               <div className="choice-group-cross-references">
-                {this.formatCrossReferences(choicePair[1].choice)}
+                {this.renderCrossReferences(choicePair[1].choice)}
               </div>
             </div>
           </div>
@@ -87,6 +87,45 @@ class ChoiceGroup extends Component {
     );
   }
 
+  renderCrossReferences(choice) {
+    const crossReferences = getCrossReferencesForChoice(this.props.crossReferences, choice);
+    const hasVideoChoices = !!this.props.videoChoices[choice];
+
+    if (!crossReferences.length && !hasVideoChoices) {
+      return '(No cross references)';
+    }
+
+    const components = [<span key="-2">Cross references: </span>];
+
+    components.push(this.renderVideoChoices(choice));
+
+    for (let i = 0; i < crossReferences.length; i++) {
+      components.push(<b className="choice-group-cross-reference" key={i}>{crossReferences[i]}</b>);
+    }
+
+    return components;
+  }
+
+  renderVideoChoices(choice) {
+    if (!this.props.videoChoices[choice]) {
+      return <div key="nothing"/>;
+    }
+
+    const counts = [];
+    if (this.props.videoChoices[choice].S) {
+      counts.push('Sx' + this.props.videoChoices[choice].S);
+    }
+    if (this.props.videoChoices[choice].D) {
+      counts.push('Dx' + this.props.videoChoices[choice].D);
+    }
+
+    return (
+      <b key={choice + 'vc'} className="choice-group-cross-reference">
+        {choice} ({_.join(counts, ', ')})
+      </b>
+    );
+  }
+
   updateChoiceState(choice, selectValue) {
     this.props.setChoiceState(choice, selectValue ? selectValue.value : null);
   }
@@ -103,21 +142,6 @@ class ChoiceGroup extends Component {
     updatedStates.unshift({label: '?', value: '?'});
 
     return updatedStates;
-  }
-
-  formatCrossReferences(choice) {
-    const crossReferences = getCrossReferencesForChoice(this.props.crossReferences, choice);
-
-    if (!crossReferences.length) {
-      return '(No cross references)';
-    }
-
-    const components = [<span key="-2">Cross references: </span>];
-    for (let i = 0; i < crossReferences.length; i++) {
-      components.push(<b className="choice-group-cross-reference" key={i}>{crossReferences[i]} </b>);
-    }
-
-    return components;
   }
 }
 
