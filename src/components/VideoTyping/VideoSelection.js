@@ -28,7 +28,8 @@ class VideoSelection extends Component {
               className={`btn btn-link ${selectedVideoId === video.id ? 'bold' : ''}`}>
               {video.title || '...'}
             </button>
-            <button onClick={() => this.handleDeleteVideo(video.id)}
+
+            <button onClick={() => this.handleDeleteVideo(video)}
               className="videoselection-video-list-item-remove btn btn-link">
               Remove
             </button>
@@ -69,8 +70,10 @@ class VideoSelection extends Component {
     this.props.selectVideo(videoId);
   };
 
-  handleDeleteVideo = videoId => {
-    this.props.deleteVideo(videoId);
+  handleDeleteVideo = video => {
+    if (window.confirm(`Delete ${video.title}?`)) {
+      this.props.deleteVideo(video.id);
+    }
   };
 
   handleVideoChange = event => {

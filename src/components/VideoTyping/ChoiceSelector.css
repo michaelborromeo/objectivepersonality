@@ -4,7 +4,7 @@
 .easychoice-grid {
 }
 
-.easychoice-choice {
+.easychoice-choice.enabled {
     display: inline-grid;
     width: 140px;
     font-weight: bold;
@@ -12,7 +12,15 @@
     cursor: pointer;
 }
 
-.easychoice-choice:hover {
+.easychoice-choice.disabled {
+    display: inline-grid;
+    width: 140px;
+    font-weight: bold;
+    padding: 10px;
+    color: #ccc;
+}
+
+.easychoice-choice.enabled:hover {
     background-color: #ddd;
 }
 

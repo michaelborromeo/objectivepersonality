@@ -15,14 +15,25 @@ class ChoiceSelector extends Component {
     for (let i = 0; i < flatChoices.length; i++) {
       const choice = flatChoices[i];
 
-      choiceComponents.push(
-        <div onClick={choice.onClick} key={choice.choice} className="easychoice-choice">
-          {choice.choice}
-          <div className="easychoice-description">
-            {choice.description}
+      if (this.props.enabled) {
+        choiceComponents.push(
+          <div onClick={choice.onClick} key={choice.choice} className="easychoice-choice enabled">
+            {choice.choice}
+            <div className="easychoice-description">
+              {choice.description}
+            </div>
           </div>
-        </div>
-      );
+        );
+      } else {
+        choiceComponents.push(
+          <div key={choice.choice} className="easychoice-choice disabled">
+            {choice.choice}
+            <div className="easychoice-description">
+              {choice.description}
+            </div>
+          </div>
+        );
+      }
     }
 
     return (
