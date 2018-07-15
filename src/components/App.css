@@ -2,3 +2,9 @@
     overflow-y: scroll;
     max-height: 400px;
 }
+
+.btn-no-padding {
+    margin: 0;
+    padding: 0;
+    vertical-align: initial;
+}

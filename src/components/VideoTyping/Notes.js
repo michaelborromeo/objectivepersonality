@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import EditableLabel from 'react-inline-editing';
+import EditableLabel from './EditableLabel';
 import moment from 'moment';
+import 'moment-duration-format';
 import _ from 'lodash';
 
 import {deleteNote, updateNote} from '../../store/actions';
@@ -18,30 +19,53 @@ class Notes extends Component {
       return <div>No video selected.</div>;
     }
 
-    const notes = _.orderBy(videos[videoId].notes, 'seconds', 'desc');
+    const notes = _.clone(videos[videoId].notes).reverse();
 
-    for (let j = 0; j < notes.length; j++) {
-      const note = notes[j];
+    if (notes.length) {
+      for (let j = 0; j < notes.length; j++) {
+        const note = notes[j];
 
-      noteComponents.push(
-        <div key={j} className="notes-note" onKeyPress={this.handleKeyPress}>
-          <div className="notes-seconds">
-            {this.formatSeconds(note.seconds)} →
+        noteComponents.push(
+          <div id={note.id} key={j} className="notes-note" onKeyPress={this.handleKeyPress}>
+            <div className="notes-seconds">
+              <button className="btn btn-link btn-no-padding"
+                onClick={this.handlePlayerSeek(note.seconds)}>
+                {this.formatSeconds(parseInt(note.seconds, 10))}
+              </button>
+            </div>
+            →
+            <div className="notes-choice">
+              {note.choice ? note.choice + '' : ''}
+            </div>
+            <div className="notes-choice-state">
+              →
+              <button className={'btn btn-link btn-no-padding ' + (note.state === 'S' ? 'active' : '')}
+                onClick={this.handleStateUpdate(note, 'S')}>Savior</button>
+              /
+              <button className={'btn btn-link btn-no-padding ' + (note.state === 'D' ? 'active' : '')}
+                onClick={this.handleStateUpdate(note, 'D')}>Demon</button>
+            </div>
+
+            <button className={'btn btn-link btn-no-padding notes-note-remove'}
+              onClick={this.handleRemoveNote(note.id)}>Remove
+            </button>
+
+            <EditableLabel key={note.id}
+              text={note.note}
+              labelClassName={note.note ? 'notes-nonempty-note-label' : 'notes-empty-note-label'}
+              inputClassName={note.note ? 'form-control notes-nonempty-note-input' : 'form-control notes-empty-note-input'}
+              inputWidth='95%'
+              inputMaxLength={2000}
+              onFocusOut={this.handleNoteUpdate(note)}
+            />
+
+
           </div>
-          <div className="notes-choice">
-            {note.choice ? note.choice + '' : ''}
-          </div>
-
-          <EditableLabel text={note.note}
-            labelClassName={note.note ? 'notes-empty-note-label' : 'notes-nonempty-note-label'}
-            inputClassName={note.note ? 'form-control notes-empty-note-input' : 'form-control notes-nonempty-note-input'}
-            inputWidth='95%'
-            inputMaxLength='2000'
-            onFocus={this.handleFocus}
-            onFocusOut={this.handleFocusOut}
-          />
-        </div>
-      )
+        )
+      }
+    } else {
+      noteComponents.push(<div key="-1">No notes yet. Click on the functions below to start adding
+        notes.</div>);
     }
 
     return (
@@ -59,26 +83,35 @@ class Notes extends Component {
     }
   };
 
-  handleFocus = text => {
-    console.log('Focused with text: ' + text);
+  handleNoteUpdate = note => text => {
+    this.props.updateNote(note.id, text, note.state);
   };
 
-  handleFocusOut = text => {
-    console.log('Left editor with text: ' + text);
+  handleStateUpdate = (note, state) => () => {
+    this.props.updateNote(note.id, note.note, state);
+  };
+
+  handleRemoveNote = id => () => {
+    this.props.deleteNote(id);
+  };
+
+  handlePlayerSeek = seconds => () => {
+    this.props.player.seekTo(seconds);
   };
 
   formatSeconds(seconds) {
     if (seconds >= 3600) {
-      return moment(seconds, 's').format('h:mm:ss');
+      return moment.duration(seconds, 'seconds').format('h:mm:ss', {trim: false});
     } else {
-      return moment(seconds, 's').format('mm:ss');
+      return moment.duration(seconds, 'seconds').format('m:ss', {trim: false});
     }
   }
 }
 
 const mapStateToProps = state => ({
   videos: state.videoTyping.videos,
-  selectedVideoId: state.videoTyping.selectedVideoId
+  selectedVideoId: state.videoTyping.selectedVideoId,
+  player: state.videoTyping.player
 });
 
 const mapDispatchToProps = dispatch => ({

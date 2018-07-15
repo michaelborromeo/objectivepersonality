@@ -4,7 +4,7 @@
 }
 
 .notes-note {
-
+    margin-bottom: 5px;
 }
 
 .notes-seconds {
@@ -15,7 +15,23 @@
 .notes-choice {
     display: inline-block;
     font-weight: bold;
+    margin-left: 7px;
     margin-right: 7px;
+}
+
+.notes-choice-state {
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.notes-choice-state button {
+    margin-left: 7px;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.notes-choice-state button.active {
+    font-weight: bold;
 }
 
 .notes-empty-note-label {
@@ -26,8 +42,8 @@
     font-size: 0.8em;
 }
 
-.notes-nonempty-note-label:after {
-    color: #aaa;    
+.notes-empty-note-label:after {
+    color: #aaa;
     content: 'Click to add a note...';
 }
 
@@ -45,4 +61,11 @@
     margin-top: 3px;
     margin-bottom: 5px;
     width: 95%;
+}
+
+.notes-note-remove {
+    font-size: 0.6em;
+    padding-left: 5px;
+    color: #777;
+    text-transform: uppercase;
 }

@@ -1,6 +1,4 @@
 import _ from 'lodash';
-//import qs from 'query-string';
-//import {LOCATION_CHANGE} from 'connected-react-router';
 
 const initialState = {
   selectedVideoId: '',
@@ -9,37 +7,17 @@ const initialState = {
   player: null
 };
 
-const sampleState = {
-  selectedVideoId: '2g811Eo7K8U',
-  videoIds: ['2g811Eo7K8U'],
-  videos: {
-    '2g811Eo7K8U': {
-      id: '2g811Eo7K8U',
-      title: 'Some YT Video',
-      notes: [
-        {
-          id: '1234-1234-1234-1234',
-          createdAt: '2018-07-12',
-          seconds: 15,
-          choice: 'OO',
-          state: 'S',
-          note: 'This is a clear example of a double observer!!!'
-        },
-        {
-          id: '2345-2345-2345-2345',
-          createdAt: '2018-07-12',
-          seconds: 30,
-          choice: 'D',
-          state: 'S',
-          note: 'This is a clear example of a single decider!!!'
-        }
-      ]
-    }
-  },
-  player: null
-};
+try {
+  const loadedState = JSON.parse(localStorage.getItem('videoTyping'));
+  initialState.selectedVideoId = loadedState.selectedVideoId;
+  initialState.videoIds = loadedState.videoIds;
+  initialState.videos = loadedState.videos;
+  console.info('Loaded videoTyping state from localStorage');
+} catch (e) {
+  console.info('Cannot load videoTyping state from localStorage');
+}
 
-export default (state = sampleState, action) => {
+export default (state = initialState, action) => {
   let videoId;
   let noteId;
   let selectedVideoId;
@@ -147,7 +125,7 @@ export default (state = sampleState, action) => {
         createdAt: _.now(),
         seconds,
         choice,
-        state: '',
+        state: 'S',
         note: ''
       });
 
@@ -159,16 +137,13 @@ export default (state = sampleState, action) => {
       };
 
     case 'UPDATE_NOTE':
-      videoId = action.payload.videoId;
+      videoId = state.selectedVideoId;
       noteId = action.payload.noteId;
+      videos = _.clone(state.videos);
       const note = action.payload.note;
       const choiceState = action.payload.state;
 
-      if (!state.videoIds.includes(videoId)) {
-        return state;
-      }
-
-      notes = state.videos[videoId].notes;
+      notes = videos[videoId].notes;
       noteIndex = _.findIndex(notes, note => note.id === noteId);
       notes[noteIndex].note = note;
       notes[noteIndex].state = choiceState;
@@ -181,16 +156,13 @@ export default (state = sampleState, action) => {
       };
 
     case 'DELETE_NOTE':
-      videoId = action.payload.videoId;
+      videoId = state.selectedVideoId;
       noteId = action.payload.noteId;
+      videos = _.clone(state.videos);
 
-      if (!state.videoIds.includes(videoId)) {
-        return state;
-      }
-
-      notes = state.videos[videoId].notes;
+      notes = videos[videoId].notes;
       noteIndex = _.findIndex(notes, note => note.id === noteId);
-      delete notes[noteIndex];
+      notes.splice(noteIndex);
 
       return {
         selectedVideoId: state.selectedVideoId,
