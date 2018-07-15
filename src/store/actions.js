@@ -62,7 +62,7 @@ export function addNote(noteId, videoSeconds, choice) {
   };
 }
 
-export function updateAddNote(noteId, note, state) {
+export function updateNote(noteId, note, state) {
   return {
     type: 'UPDATE_NOTE',
     payload: {
@@ -73,11 +73,10 @@ export function updateAddNote(noteId, note, state) {
   };
 }
 
-export function deleteNote(videoId, noteId) {
+export function deleteNote(noteId) {
   return {
     type: 'DELETE_NOTE',
     payload: {
-      videoId,
       noteId
     }
   };

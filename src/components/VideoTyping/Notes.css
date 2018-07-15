@@ -17,3 +17,32 @@
     font-weight: bold;
     margin-right: 7px;
 }
+
+.notes-empty-note-label {
+    font-size: 0.8em;
+}
+
+.notes-nonempty-note-label {
+    font-size: 0.8em;
+}
+
+.notes-nonempty-note-label:after {
+    color: #aaa;    
+    content: 'Click to add a note...';
+}
+
+.notes-empty-note-input {
+    font-size: 0.8em;
+    margin-left: 3px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    width: 95%;
+}
+
+.notes-nonempty-note-input {
+    font-size: 0.8em;
+    margin-left: 3px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    width: 95%;
+}
