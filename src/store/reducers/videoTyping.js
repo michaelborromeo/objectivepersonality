@@ -8,7 +8,7 @@ const initialState = {
 };
 
 try {
-  const loadedState = JSON.parse(localStorage.getItem('videoTyping'));
+  const loadedState = JSON.parse(localStorage.getItem('loadedState'));
   initialState.selectedVideoId = loadedState.selectedVideoId;
   initialState.videoIds = loadedState.videoIds;
   initialState.videos = loadedState.videos;
@@ -162,7 +162,7 @@ export default (state = initialState, action) => {
 
       notes = videos[videoId].notes;
       noteIndex = _.findIndex(notes, note => note.id === noteId);
-      notes.splice(noteIndex);
+      notes.splice(noteIndex, 1);
 
       return {
         selectedVideoId: state.selectedVideoId,

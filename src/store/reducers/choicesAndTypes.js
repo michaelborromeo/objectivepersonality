@@ -86,8 +86,22 @@ function getChoiceStatesFromHash() {
     choiceStates: {}
   };
 
+  // if there is nothing in the hash url then check the localStorage
   if (!hashContent.hash) {
-    return hashContent;
+    try {
+      const loadedState = JSON.parse(localStorage.getItem('loadedState'));
+      const encodedChoiceStates = loadedState.encodedChoiceStates;
+      if (encodedChoiceStates) {
+        hashContent.hash = `#${encodedChoiceStates}`;
+        window.location.hash = `#${encodedChoiceStates}`;
+        console.info('Loaded choicesAndTypes state from localStorage');
+      } else {
+        return hashContent;
+      }
+    } catch (e) {
+      console.info('Cannot load choicesAndTypes state from localStorage');
+      return hashContent;
+    }
   }
 
   try {

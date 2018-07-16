@@ -46,7 +46,7 @@ class Notes extends Component {
                 onClick={this.handleStateUpdate(note, 'D')}>Demon</button>
             </div>
 
-            <button className={'btn btn-link btn-no-padding notes-note-remove'}
+            <button key={note.id + 'remove'} className={'btn btn-link btn-no-padding notes-note-remove'}
               onClick={this.handleRemoveNote(note.id)}>Remove
             </button>
 

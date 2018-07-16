@@ -8,9 +8,6 @@ import './Choices.css';
 
 class Choices extends Component {
   render() {
-
-    console.log(this.props.videoChoices);
-
     const choiceGroupComponents = [];
     for (let i = 0; i < this.props.choiceGroups.length; i++) {
       const choiceGroup = this.props.choiceGroups[i];

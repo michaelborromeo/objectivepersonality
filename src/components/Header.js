@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
+
 import './Header.css';
 
 class Header extends Component {
@@ -8,10 +10,10 @@ class Header extends Component {
       <div className="Header">
         <div className="header-text">Objective Personality Helper</div>
         <div className="header-github">
-          <NavLink className="btn btn-link" exact activeClassName="bold" to="/">
+          <NavLink className="btn btn-link" to={`/#${this.props.encodedChoiceStates}`}>
             Type Sheet
           </NavLink>
-          <NavLink className="btn btn-link" exact activeClassName="bold" to="/video">
+          <NavLink className="btn btn-link" to="/video">
             Video Typing
           </NavLink>
           <a className="btn btn-link" href="https://github.com/michaelborromeo/objectivepersonality"
@@ -25,4 +27,10 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => ({
+  encodedChoiceStates: state.choicesAndTypes.encodedChoiceStates
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
