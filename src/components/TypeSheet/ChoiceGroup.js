@@ -108,7 +108,7 @@ class ChoiceGroup extends Component {
 
   renderVideoChoices(choice) {
     if (!this.props.videoChoices[choice]) {
-      return <div key="nothing"/>;
+      return null;
     }
 
     const counts = [];
