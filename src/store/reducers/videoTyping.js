@@ -93,8 +93,8 @@ export default (state = initialState, action) => {
 
     case 'DELETE_VIDEO':
       videoId = action.payload.videoId;
-      videos = state.videos;
-      videoIds = state.videoIds;
+      videos = _.clone(state.videos);
+      videoIds = _.clone(state.videoIds);
 
       if (videoIds.includes(videoId)) {
         _.remove(videoIds, value => value === videoId);

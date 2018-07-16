@@ -29,7 +29,7 @@ class VideoSelection extends Component {
               {video.title || '...'}
             </button>
 
-            <button onClick={() => this.handleDeleteVideo(video)}
+            <button key={video.id + 'remove'} onClick={() => this.handleDeleteVideo(video)}
               className="videoselection-video-list-item-remove btn btn-link">
               Remove
             </button>
