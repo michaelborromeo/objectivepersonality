@@ -51,7 +51,7 @@ class VideoSelection extends Component {
             <input onChange={this.handleVideoChange}
               value={this.state.videoUrlOrId}
               className="form-control"
-              placeholder="Enter a YouTube URL or Video ID..."/>
+              placeholder="https://www.youtube.com/watch?v=1234567890"/>
           </div>
           <div className="col-1">
             <button onClick={this.handleLoadVideoClick}
